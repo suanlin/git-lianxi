@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+   
+        
+        var a = function a(){
+            var b = 30;
+            alert(5);
+        }
+
+        a = 10
+    
+    // alert(a); 
+    // var a = 10;
+    // function a(){
+    //     var b = 30;
+    //     alert(5);
+    // }
+    // // a(); 报错
+    // alert(a); //不执行
+
+ 
+            a = function a(){
+        
+            }
+            a = 10
+    /*     
+        a = function a(){}
+            a = 10
+            a = 30
+            a = function (){
+                alert(333);
+            } 
+  
+    // alert(a);  //function a(){}
+    // var a = 10;
+    // function a(){
+    //     var b = 30;
+    //     alert(5);
+    // }
+    // alert(a);//10
+    // a = 30;
+    // alert(a);//30
+    // var a = function (){
+    //     alert(333);
+    // } 
+    // function a(){}
+    // a();// 333
+    // alert(a);//57  function (){alert(333);} 
+ 
+        var b
+
+        a = function a(){
+            alert(333);
+        }
+        a = function (){alert(a);}
+        a = 30
+        b = function(a){
+            //形参赋值
+            //变量提升
+            //执行上下文
+            //执行栈销毁
+            var a = 50;
+            alert(a);
+        }
+        b(a);
+    */
+    function a(){
+        alert(1);
+    }
+    a(); //333
+    var a = function (){alert(a);}
+    alert(a);//fn
+    alert(a);//30
+    var b = function(a){
+        var a = 50;
+        alert(a);
+    }
+    b(a);//50
+    alert(a);//50  
+    function a(){
+        alert(333);
+    }
+    alert(a);//50   
+</script>
+<script>
+    // +function(){
+    //     /*
+    //         形参赋值: ''
+    //         预解析:
+    //             // var a
+    //             a = function a(){}
+    //             b = function b(){}
+    //             var c
+    //         执行上下文:
+    //             function a(){}
+    //             a = 5   
+    //             b = 6
+    //             c = d = b    
+
+
+    //     console.log(a) //函数function a(){}
+    //     var a=5;
+    //     function a(){}
+    //     console.log(a) //5
+    //     function b(){}
+    //     b=6
+    //     console.log(b) //function b(){}   6
+    //     var c=d=b
+            
+    // }()
+    // console.log(d) //6   拿不到      6   window.d
+    // console.log(c) //6   拿不到      拿不到 报错
+
+
+
+        事件触发是谁，this就是谁
+        window  全局打印this  fn()  this是window
+        对象下的this 就是.前面的主
+   
+    var obj = {
+        val:2,
+        dbl:function(){ //001
+            var val = 45;
+            console.log(this); //obj
+            this.val *= 2;
+            console.log(val); //45
+            console.log(this.val);//4
+        }
+    }
+    var ff = obj.dbl(); //obj  45 4    
+    var fn = obj.dbl; //window  45  NaN
+    fn();
+
+
+
+    console.log(this);
+    function fn(){
+        console.log(this);
+    }
+    console.log(window)
+    window.fn();
+    let obj2 = {
+        style:{
+            fn:function(){ //001
+                console.log(this);
+            }
+        }
+    }
+    console.log()
+    let f = obj2.style.fn; //001
+    f();
+</script>
+<script>
+
+    console.log(a);
+    var a = 20;
+    let a = 20;
+
+    // console.log(window); //window.a
+
+    // var a = 20;
+    var a = 20;  //window.a
+    // console.log(a);
+    // function fn(){ //在函数内开辟一个执行栈
+ //形参赋值
+ //变量提升  var function
+ //执行上下文
+ //销毁作用域
+       a = 30;   //window.a
+
+   fn();
+
+   function fn(){
+       var a = 50;
+       function f(){
+           console.log(a);
+       }
+       f();
+   }
+  fn();
+  console.log(a);
+  var b = 10;
+  function fn(){
+      //var function  var a var b
+      alert(a);
+      alert(b);
+      var a = 20;
+      b = 50;
+      alert(a);//20
+      var b;
+  }
+  fn();
+  alert(b);
+
+
+     var b = 10;
+     function fn(){
+         //var a,b
+         alert(a); //undefined
+         var a = 20;
+         alert(b); //undefined
+         window.b = 30;
+         alert(a);//20
+         b = 50;
+         var b;
+     }
+     fn();
+     alert(b);//30
+
+
+    // var a = 20;
+    // function fn(a){ //var a = 20
+    //     alert(a);//20
+    //     var b = 30;
+    //     a = 40;
+    //     alert(a);//40
+    // }
+    // fn(a);
+    // alert(a);
+
+
+    var a = 20;
+    function fn(a){
+        /*
+            形参赋值:
+                a = 20;
+            预解析:
+                var b
+            执行上下文:
+                a = 20
+                b = 30;
+                a = 40
+        */
+        alert(a);
+        var b = 30;
+        a = 40;
+        var a;
+        alert(a);
+    }
+    fn(a);
+    alert(a);
+
+
+
+
+    // var a = function(){console.log(4567890)};
+    function fn(a){
+        /*
+        //    a = function(){console.log(4567890)}  形参赋值
+           预解析:
+            // var a 
+            var b
+            a = function a(){
+                alert(5);
+            }
+            执行上下文:
+                a = function a(){
+                    alert(5);
+                }
+                b = 30;
+                a = 40
+        */
+        alert(a);  
+        var b = 30;
+        a = 40;
+        var a;
+        alert(a);
+        function a(){
+            alert(5);
+        }
+    }
+    // fn(a);
+    // alert(a);//function(){console.log(4567890)};
+
+//this 练习
+
+    function fn(){
+        console.log(this); //document
+    }    
+    // document.onclick = function(){
+    //     fn();
+    // };
+    document.onclick = (function(){
+        console.log(this); //window
+        return fn;
+    })();   
+
+
+
+
+</script>
+<script>
+    //// 闭包啊
+    /*
+       闭包:
+    教课书上说的是，一个函数访问外部变量就这个函数就叫闭包。      
+    作用:
+   为了存储变量或者参数,好累积计算。
+   (function(){
+   })();
+  1.函数嵌套函数
+  2.子函数引用父函数的参数或者变量
+  3.子函数被外界所引用
+  4.父级就形成了闭包环境，父级的参数或者变量就不会被浏览器垃圾回收机制回收
+  5.打印父级的函数返回值，那么会发现，scopes下有个closure,就是闭包
+        内部的变量不被外界所污染，函数的特性之一
+    */    
+
+    // var a = 5;
+    function fn(){
+        var a = 10;
+        function f(){
+            ++a;
+            console.log(a)
+        }
+        function f2(){
+        }
+        // console.dir(f2);
+        return f;
+    }
+    var ff = fn(1);  //fn就形成了闭包环境fn中的参数或者变量就不会被浏览器垃圾回收机制回收
+    // fn()(); //11
+    // fn()(); //11
+    // ff();//11
+    // ff();//12
+    console.dir(ff);
+
+</script>
+</body>
+</html>
