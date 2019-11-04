@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var ary = [1,1,2,3,4,3,2,2,3,4];
+   // 循环每一项数组
+    for(let i = 0; i < ary.length;i++){
+        // 将数组的每一项赋值给q
+        var q = ary[i]
+        // 在循环一次数组从数组第第二位开始就是每项数组q的前一位 理解不了就去死吧
+        for(let j = i+1;j<ary.length;j++){
+        // 也是保存数组的每一项赋值给e
+            var e = ary[j];
+            // 判断用第一次循环的每一项与第二次循环的每一项比较
+            if(q===e){
+            // 进来了就往ary里面从第j项开始就是索引的位置删除1个就是删除重复的
+                ary.splice(j,1)
+            // j-- 是为了防止数组塌陷这么高级的词估计你也不懂记住就行删除了上边的一项索引也要删除一项
+            j--
+            }
+           
+        }
+    }
+    console.log(ary)
+
+var ary= [1,2,4,4,5,5,6,7,7,7,8,8,6,9]
+    // 声明一个变量 等于一个对象
+    var q={};
+    //用 forEach循环ary 随意写一个值(随意写一个值imet)=>{q是一个对象将循环的每一项赋值给对象的每一项 } 
+        ary.forEach((pp)=>{
+            q[pp]=pp;
+        })
+      
+        // 在声明一个数组w
+        var w = [];
+        // 用for in 循环对象的每一项这是 for in 的特点就是循环对象的中的每一项
+    for(var k in q){
+        // 将循环的每一项都push到空数组w中
+        w.push(q[k])
+    }
+// 输出的是push完的数组
+console.log(w)
+    </script>
+    
+</body>
+</html>

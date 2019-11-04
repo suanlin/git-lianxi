@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height: 100px;
+    background: skyblue;
+}
+</style>
+</head>
+<body>
+    设置属性名:<input type="text" id="key"/>
+    设置属性值:<input type="text" id="val"/>
+    <button id="btn">按钮</button>
+    <div id="box">32132132</div>
+<script>
+    /*
+        1.点击按钮
+        2.获取key中的内容和val中的内容
+        3.去设置box
+    */
+    btn.onclick = function(){
+        let kv = key.value;
+        let vv = val.value;
+        // console.log(kv,vv);
+        box.style[kv] = vv;
+    }
+
+</script>
+</body>
+</html>

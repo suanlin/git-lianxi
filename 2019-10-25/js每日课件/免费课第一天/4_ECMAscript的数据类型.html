@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box1" class="box"></div>
+<script>
+    /*
+        JS的数据类型:（非常重要）
+            数字、字符串、布尔值、空、未定义、对象
+
+            基本类型
+                Number、String、Boolean、null、undefined
+            
+            引用类型
+                Object
+
+        
+
+    */
+
+    //数字
+    // console.log(100); //蓝色的阿拉伯数字
+
+    console.log(typeof 123);
+
+
+    //字符串 (页面中的所有文本都是字符串)，在赋值样式的时候都是字符串。
+    // console.log("珠峰"); //被单引号对或者双引号对包裹的内容都是字符串
+    // console.log('abC');
+    // console.log('100');//100的字符串，不是数字100
+
+    // console.log('100'+1);
+
+    // console.log(typeof '哈哈');
+
+
+    // Boolean  布尔值（只有2个值）  true真的 false假的
+
+    // console.log(typeof false);
+
+    // null 空对象，空地址(空指针) 在前期只要出现null，你就要考虑元素是否存在
+    //元素存在，但是写错了
+    //元素压根不存在
+
+
+    // console.log(document.getElementById('box'));//null
+
+    // console.log(typeof document.getElementById('box'));
+
+    /*
+        报错:
+        Uncaught TypeError: Cannot read property 'style' of null
+    */
+    // document.getElementById('box').style.width = '100px';
+
+
+    // undefined  未定义(有这个东西，但是没有赋值，现在没有，有可能将来会有)
+
+    // console.log(typeof undefined);
+
+
+    /*
+        string，number
+
+        object{
+            数组对象
+            时间对象
+            对象
+            ....
+        }
+    */
+
+    // Object  对象
+    /*
+        有很多表现形式
+            1:(名字叫对象的对象类型)由键值对的形式表示，一对属性值和另一对属性值之前用,号分割
+                {
+                    key1:value1,
+                    key2:value2
+                }
+
+                obj.key1 -> value1
+
+
+            2:(名字叫数组的对象类型)数组对象
+                [1,2,3,4][0] -> 1
+
+
+            js中计数是从0开始的
+            
+
+            3:(名字叫时间的对象类型)时间对象
+                new Date
+
+    */
+   
+
+    // console.log(typeof {}); //typeof 'object'
+    // console.log(typeof []);
+    // console.log(typeof new Date())
+
+
+
+    // 函数
+    function fn(){}
+    
+    console.log(typeof fn); // 'function'
+
+
+
+
+
+   
+    
+</script>
+</body>
+</html>

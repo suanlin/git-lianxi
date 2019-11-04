@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="a">a</button>
+    <button id="b">b</button>
+    <button id="c">c</button>
+    <div id="box" class="d">1</div>
+    <input type="button" value="确定" id="txt">
+    <input type="text" id="txt1">
+    <script>
+        /*
+            文本:innerText
+            内容:innerHTML
+            表单内容:value  
+    
+            className
+    
+    
+            页面中通过元素属性获取出来的***都是字符串***
+    
+            classList
+                add  添加一个或者多个class
+                contains  指定的class是否存在，存在就是true，否则false
+                remove  删除一个或者多个class
+                replace(旧的class,新的class)  替换class
+                toggle(开关)
+        */
+        const box = document.getElementById('box');
+
+        console.dir(box.classList)
+
+        box.innerText = '<p>哈哈</p>'; // 把'<p>哈哈</p>'整体当作字符串在div内写入写入
+        box.innerHTML = '<p>哈哈</p>'; // 在div内写入一个p标签，并添加内容哈哈
+
+        console.dir(typeof box.innerText); // 'string'
+        console.dir(typeof box.innerHTML); // 'string'
+
+        txt.value = 'typeof'  //写操作
+
+        console.log(txt.value);// 读操作
+
+        // txt1.value = '珠峰培训';
+
+
+
+
+    </script>

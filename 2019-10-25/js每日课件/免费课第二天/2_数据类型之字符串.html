@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+<script>
+    /*
+        字符串:
+            string
+            被单引号对或者双引号对包裹的数据叫做字符串
+
+            千万不要"1'写  ×
+
+            HTML中的文本都是字符串
+                innerText 为字符串
+            设置样式，值也要为字符串
+                box.style.display = 'block'
+
+            加法运算为字符串拼接   难点
+
+            在复杂字符串拼接的时候，可以先设置一个默认的值，然后通过删除默认值
+            添加''(咔咔)，在字符串中++ 即为:'+ 放变量 +'
+
+            'zhufeng培训'
+
+        字符串是不能回车的，不然会报错。
+
+        ES6中新增一个叫做模板字符串的语法
+            `写字符`
+
+        '' "" `` 字符串
+
+        如果在模板字符串中需要添加、更改字符串(进行字符串拼接)，那么只需要在要添加的位置上面写一个${字符串或者变量或者运算}
+
+    */    
+//    let str = 'zhufeng';
+//    let str2 = '培训';
+//    console.log(str + str2);
+
+    let w = 100;
+    let h = 100;
+    let bg = 'red';
+    let fz = '20px';
+    // console.log('width:'+w+'px;'+'height:'+h+'px');
+    // console.log('width:'+w+'px;height:'+h+'px');
+
+    // box.innerHTML = '<div style="width:'+w+'px;height:'+h+'px;background:'+bg+'"></div>';
+
+    // box.innerHTML = '<div style="width:'+w+'px;height:'+h+'px;background:'+bg+';font-size:'+ fz +'"></div>';
+
+
+    // box.innerHTML = '<div style="width:100px;' + 
+    // 'height:100px"></div>';
+
+    box.innerHTML = `<div 
+        style="width:${w*2}px;
+        height:${h}px;
+        background:${'green'}"
+        ></div>`;
+
+    // console.log(box)
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        布尔值:
+            true 真的 对的
+
+            false 假的  错的
+
+            ! 否、非、取反
+                可以颠倒是非，并且转成布尔值
+
+            快速知晓某个数据类型的布尔值:
+                !!
+    */
+
+    // console.log(Boolean(true));
+    // console.log(Boolean(false));
+    // console.log(Boolean(0));//假的
+    // console.log(Boolean(' '));//空字符串为假，非空字符串为真
+
+    // console.log(Boolean('px'*5)); //假的
+    // console.log(Boolean(null)); //假的
+    // console.log(Boolean(undefined)); //假的
+
+    // console.log(Boolean(Number([])));
+    // console.log(Boolean([])); //真
+
+    // Number(true) //1
+
+    /*
+        先用Boolean([])转数组，因为转出来的结果为true，再让true变为假的，最后结果为false
+    */
+    // console.log(![]);//false
+
+    // console.log(!null);
+
+    /*
+        先运算parseInt 结果为NaN
+
+        NaN被isNaN运算之后结果true
+
+        true被Number运算结果为 1
+
+        1在布尔值中为true，取反为false，最后的结果为false
+    */
+
+    // console.log(!Number(isNaN(parseInt('px'))));//false
+
+    // console.log(!![]);
+
+
+
+</script>
+</body>
+</html>

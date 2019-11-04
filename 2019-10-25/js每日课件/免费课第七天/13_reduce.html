@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    /*
+        reduce(两个参数)，callback,初始值
+
+        callback(上一次的结果,下一次的值)
+
+        循环数组累积每一次的返回结果
+
+    */
+
+    //总计
+    let ary = [10.5,6,3,2,8]; 
+    
+    //prev为上次的结果
+    let a = ary.reduce(function(prev,next){
+        console.log(prev,next);
+        return prev + next;
+    },0);
+
+    console.log(a);//29.5
+    
+</script>
+</body>
+</html>

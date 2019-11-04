@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        replace(要替换谁（字符串||正则）,替换成什么（字符串||回调函数）) 替换
+    */   
+    let str = '艹,你妹金三胖';//%$%^$
+
+    // console.log(str.replace('你妹','%^&'));
+
+    let ss = str.replace('你妹',function($0){//$0就是要替换的字符
+        let temp = '';
+        for(let i=0;i<$0.length;i++){
+            temp += '*'
+        }
+        return temp; //如果是回调函数的情况下，那么一定要写return，不然返回替换结果为undefined
+        // console.log($0);
+    });
+
+    console.log(ss);
+
+
+
+</script>
+</body>
+</html>

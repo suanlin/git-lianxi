@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:50px;
+    height:50px;
+    background: skyblue;
+    position: absolute;
+    top:0;
+    left:0;
+}
+</style>
+</head>
+<body>
+    <button id="t">停</button>
+    <div id="box"></div>
+<script>
+    let num = 0;
+    // box.onclick = function(){
+    //     let d = new Date();
+    //     setInterval(() => {
+    //         let n = new Date();
+    //         console.log(n-d);
+    //         d = n;
+    //         num += 1;
+    //         box.style.left = num + 'px';
+    //     }, 16.7); //浏览器刷新频率为16.7毫秒/次
+    // }
+    // requestAnimationFrame //根据刷新频率走的
+
+    let timer;
+    box.onclick = function(){
+        (function move(){
+            timer = requestAnimationFrame(move);
+            num += 1;
+            box.style.left = num + 'px';
+        })();
+    }
+
+    t.onclick = function(){
+        cancelAnimationFrame(timer);
+    }
+   
+
+</script>
+</body>
+</html>

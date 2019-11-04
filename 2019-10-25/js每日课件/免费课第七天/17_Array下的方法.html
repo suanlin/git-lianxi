@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // [](实例)  new Array(构造函数)
+
+    /*
+        Array.from(类数组) 把类数组转成数组
+
+        Array.isArray(数据) 检测参数中的数据是否为数组,是数组返回true，否则false
+    */
+
+    //实例上的方法叫动态方法
+    // [1,2,3].push(5);
+    // [1].push(5);
+
+    //构造函数上的方法叫静态方法
+    // Array.from()
+    // console.log(Array.isArray({}))
+ 
+
+    function fn(){
+        // console.log(arguments[0]);
+        // console.log([].push)
+        console.log(Array.from(arguments).push)
+    }
+    fn(1,2,3,4,6)
+    // Array.from()
+
+</script>
+</body>
+</html>

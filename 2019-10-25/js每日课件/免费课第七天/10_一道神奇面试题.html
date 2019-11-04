@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //查询下面数组中珠峰出现的次数，并且返回它们所在的位置,必须使用indexOf
+    let ary = ['珠峰','珠峰',1,'yy','珠峰','kaka','haha','珠峰'];   
+
+    let i = 0;
+    let num = 0;
+    let ary2 = [];
+
+    while(ary.indexOf('珠峰',i)!=-1){ //找不到珠峰就返回-1,只要能找到珠峰就循环
+        let j = ary.indexOf('珠峰',i);//当前珠峰的位置
+        ary2.push(j); //把位置push到ary2中
+        num ++; //统计次数
+        i = j + 1;//继续往后找。
+    }
+    console.log(num+'个',ary2);
+
+
+
+
+</script>
+</body>
+</html>

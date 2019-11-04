@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        typeof 判断下面的数据很精准
+            字符串、数字、布尔值、undefined
+
+        但是null在typeof中为object，Array也是检测不出来的
+
+        请写一个判断变量为数组的方法
+
+        console.log(Object.prototype.toString.call(ary) === '[object Array]');
+
+        Array  构造函数 浏览器内置的
+
+        instanceof  二元运算符，运算右值是不是左值的构造函数，
+        简单点理解就是右值是不是左值的老爹。
+
+
+        Object的toString
+
+        [object Object]
+
+
+
+    */    
+
+    let ary = [];
+    // console.log(typeof ary);
+    // console.log(ary instanceof Array);
+    console.log(Object.prototype.toString.call(ary) === '[object Array]');
+
+
+
+
+</script>
+</body>
+</html>

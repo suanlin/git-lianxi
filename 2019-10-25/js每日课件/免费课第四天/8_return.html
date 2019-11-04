@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">0</button>
+    <!-- <button id="btn2">0</!-->
+    <input type="text" id="txt"/>
+<script>
+    /*
+        return 函数返回值   也是小难点
+
+        1.函数名 + 括号，拿个变量去接收，这个变量存储的就是函数返回值
+        2.函数名 + 括号打印输出，也是打印函数返回值
+
+
+        在函数调用的时候，要注意有没有去使用函数返回值
+
+        函数内部参数或者变量是不能被外界所访问的
+
+
+        ** return下面的代码是不执行的。
+
+        什么时候用return?
+            把函数内的运算结果，拿到函数外面使用，就要使用return
+
+            当某个条件成立的时候，不执行下面的代码，可以使用return
+
+
+    */
+
+    btn.onclick = function(){
+        //当内容为空的时候，弹出请输入内容弹框，并且阻止下面的代码执行
+        if(txt.value === ''){
+            alert('请输入内容');
+            return;
+        }
+        alert('执行');
+    }
+
+
+
+    // function fn(a,b){
+    //     alert(a+b);
+    //     return;
+    //     alert(5); 
+    // }
+    // fn(1,2);
+
+    // function fn(){
+    //     for(let i=0;i<3;i++){
+    //         if(i == 1){
+    //             return;
+    //         }
+    //         alert(i);
+    //     }
+    // }
+    // fn();
+
+    //函数内才有return，如果不在函数内使用return就报错
+    // for(let i=0;i<3;i++){
+    //     if(i == 1){
+    //         return;
+    //     }
+    //     alert(i);
+    // }
+
+
+
+    // let num = 0;
+    // btn.onclick = function(){
+    //     num ++;
+    //     btn.innerHTML = todble(num);
+    // }
+    // let num2 = 0;
+
+    // btn2.onclick = function(){
+    //     num2 ++;
+    //     btn2.innerHTML = todble(num2);
+    // }
+
+    // btn2.onclick = function(){
+    //     num2 ++;
+    //     if(num2 < 10){
+    //         btn2.innerHTML = '0'+num2;
+    //     }else{
+    //         btn2.innerHTML = ''+num2;
+    //     }
+    // }
+
+
+    // function todble(num){
+    //     if(num < 10){
+    //         return '0'+num;
+    //     }else{
+    //         return ''+num;
+    //     }
+    // }
+
+
+
+
+
+
+    // function fn(a,b){
+    //     console.log(a * b);
+    //     return (a * b);
+    // }
+    
+    // console.log(fn(1,6));
+
+
+    // let a = 5;
+    // let b = 6;
+    // let c = 7;
+    // let d = 8;
+
+    // function fn(a,b){
+    //     // console.log(a * b);
+    //     return (a*b);
+    // }
+    // console.log(fn(a,b) * a);
+    // fn(b,d);
+    // fn(a,c);
+
+    // console.log(b * d);
+    // console.log(a * c);
+
+
+
+
+
+
+
+    // function fn(){
+    //     var a = 20;
+    //     return a;
+    // }
+    // fn();
+    // console.log(fn());
+
+
+    // function fn(a,b){
+    //     console.log(a+b);
+    //     return [1,2,3,4]; 
+    // }
+    // let a = fn(1,2);
+    // console.log(a);
+    // console.log(fn(1,2));
+
+</script>
+</body>
+</html>

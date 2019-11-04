@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        for套for运行机制:
+            先执行一次大循环，然后执行完小循环，再执行一次大循环，再执行完小循环
+
+        注意:
+            循环是单纯的for套for的时候，变量如果是var，那么嵌套for的变量和外面for的变量不能重名，不然会有小惊喜。
+
+    */
+    for(var i=0;i<4;i++){
+        alert('大循环'+i);//0  3
+        for(var j=0;j<2;j++){
+            alert('小循环'+j);//0,1,2,3
+        }
+    }
+</script>
+</body>
+</html>

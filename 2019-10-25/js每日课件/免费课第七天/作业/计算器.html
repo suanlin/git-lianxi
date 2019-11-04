@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="t1"/> 
+    <select name="" id="s1">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+        <option>%</option>
+    </select>
+    <input type="text" id="t2"/> = 
+    <input type="text" id="count"/> 
+    <input type="button" value="计算" id="btn"/>
+<script>
+    /*
+        eval()  能够把字符串尽量传成js能够运行的代码
+    */
+
+    // console.log('alert(1)')
+
+    // eval('alert(1)');
+
+    btn.onclick = function(){
+        // console.log(eval(t1.value + s1.value + t2.value))
+
+        // console.log(eval(t1.value));
+
+        console.log(new Function('','return ' + t1.value)());
+
+        // console.log(new Function())
+    }
+
+    // let fn = new Function('a,b','return a+b');
+    // console.log(fn(1,2));
+</script>
+</body>
+</html>

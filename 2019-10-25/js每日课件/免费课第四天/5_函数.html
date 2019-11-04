@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        函数:(难点)
+            单拎出来不难,但是一结合起来就难了，所以要把函数学好，就多练
+
+        使用函数的目的是为了代码复用。
+
+
+        函数有三种形态（角色）
+
+        1.函数
+        2.Function的实例
+        3.构造函数
+
+        function
+
+        声明函数:
+            16进制的堆内存
+            function 函数名 () {
+                把js代码当做字符串存储
+            }
+            再把内存地址赋值给函数名
+
+            //AAAFFF000
+            FN = function () {
+                把js代码当做字符串存储
+            }
+
+            FN = AAAFFF000
+
+        1.开辟一个16进制的堆内存空间，把js代码当做字符串存到堆内存中
+        2.把空间地址赋值给函数名
+
+
+        函数调用（执行）:
+            当函数 + 括号就为函数调用
+
+            1.函数调用的时候会开辟一个执行栈
+            2.形参赋值
+            3.把函数体内的字符串放到这个执行栈中执行（执行上下文）
+            4.变量或者参数销毁
+
+
+
+    */
+
+    //函数定义：在调用的时候可以在同作用域直系嵌套环境执行中调用
+    
+    // function fn(){
+    //     console.log(1);   
+    //     function fn4(){
+    //         console.log(111)
+    //     }
+    //     function fn2(){
+    //         fn4()
+    //     }
+    //     fn2();
+    // }
+    // fn();
+
+    
+  
+    //函数表达式:只能在定义之后调用
+    // var fn = function(){
+    //     console.log(1);
+    // }
+    // fn();
+
+    //匿名函数自执行
+    // (function (){
+    //     console.log('222')
+    // })();
+
+
+    // let fn = () => {
+    //     console.log(1);
+    // }
+    // fn();
+
+    // let fn = a => {
+    //     console.log(a);
+    // }
+
+    let fn = a => console.log(a);
+    fn(111);
+
+    
+  
+
+</script>
+</body>
+</html>

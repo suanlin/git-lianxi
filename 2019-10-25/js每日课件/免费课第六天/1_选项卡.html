@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:400px;
+}
+#box div{
+    width:400px;
+    height:200px;
+    border:1px solid #000;
+    display:none;
+}
+#box div.show{
+    display:block;
+}
+.active{
+    background: yellow;
+}
+
+
+</style>
+</head>
+<body>
+    <div id="box">
+        <button class="active">按钮一</button>
+        <button>按钮二</button>
+        <button>按钮三</button>
+        <div class="show">内容一</div>
+        <div>内容二</div>
+        <div>内容三</div>
+    </div>
+<script>
+    /*
+        自定义属性
+            给引用类型添加一个标识，进行一一对应的时候，首先就要想到自定义属性
+
+            有规律的添加自定义属性，我们叫索引(index)
+
+            [1,2,3][2]
+
+        1.给每个按钮添加点击事件函数
+        2.点击的按钮亮，别的按钮不亮
+        3.点第一个按钮就对应第一个div，以此类推
+
+        大清洗版选项卡
+    */
+
+    const btns = document.querySelectorAll('button');
+    const divs = document.querySelectorAll('#box div');
+
+    for(var i=0,len=btns.length;i<len;i++){
+        btns[i].index = i;
+        btns[i].onclick = function(){//001,002
+           //把所有按钮的class先清空，再把点击当前的按钮添加active
+           //把所有div的class清空，然后与点击的按钮进行对应
+        //    btns[i].className = '';
+        //    alert(i);
+            for(var i=0,len=btns.length;i<len;i++){
+                // alert(i);
+                btns[i].className = '';
+                divs[i].className = '';
+            }
+            this.className = 'active';
+
+            /*
+                this.index是个数字，而从集合中找到某个元素要使用下标
+
+                点击第一个按钮，this.index就是0，正好对应divs[0]，也就是
+                第一个div
+            */
+            divs[this.index].className = 'show';
+
+            // console.log(this.index);
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<script>
+    /*
+        null代表空地址，这个东西是不存在的
+
+        1.元素不存在或者获取不到某个元素（script标签上面没有想要获取的元素）
+        2.赋值一个空地址
+        3.正则没有匹配到字符的时候会出现null
+
+
+
+    */
+
+    // console.log(typeof null); //object
+
+    // console.log('abc'.match(/\d/))
+   
+    window.onload = function(){
+        let box = document.getElementById('box');
+        box.style.width = '100px';
+        box = null;
+        console.log(box);
+    }
+    // let box = document.getElementById('box');
+    // // console.log(box);
+    // box.style.width = '100px';
+    // // console.log(1)
+</script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

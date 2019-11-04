@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:400px;
+}
+#box div{
+    width:400px;
+    height:200px;
+    border:1px solid #000;
+    display:none;
+}
+#box div.show{
+    display:block;
+}
+.active{
+    background: yellow;
+}
+
+
+</style>
+</head>
+<body>
+    <div id="box">
+        <button class="active">按钮一</button>
+        <button >按钮二</button>
+        <button>按钮三</button>
+        <div class="show">内容一</div>
+        <div>内容二</div>
+        <div>内容三</div>
+    </div>
+<script>
+    const btns = document.querySelectorAll('button');
+    const divs = document.querySelectorAll('#box div');
+
+    /*
+        主线程:从上往下执行代码
+        异步队列:事件、定时器、前后端数据交互、promise...
+    */
+   
+    for(var i=0;i<btns.length;i++){
+        btns[i].index = i;
+        btns[i].onclick = function(){//001,002,003
+            for(var i=0;i<btns.length;i++){
+                btns[i].className = '';
+                divs[i].className = '';
+            }
+
+            //都是循环三次，就把循环div的就合并了（合并循环按钮的）
+            // for(var i=0;i<divs.length;i++){
+            //     divs[i].className = '';
+            // }
+
+            // this.className = 'active';
+
+            btns[this.index].className = 'active';
+            
+            //把点击按钮*对应*的div显示出来
+            /*
+                点第一个按钮就能拿到0   divs[0]    ['女','男']
+                点第二个按钮就能拿到1   divs[1]
+            */
+            divs[this.index].className = 'show';
+            // console.log(this.index);
+        }
+    }
+
+    console.log(i);
+
+    // console.dir(btns[0])
+
+
+
+    
+       
+
+    
+</script>
+</body>
+</html>

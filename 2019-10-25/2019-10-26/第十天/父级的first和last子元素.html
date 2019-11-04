@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+    /*
+        children:找到某个元素下的元素子节点
+
+        firstE                                                                  lementChild:找到父级的第一个子元素
+
+        lastElementChild:找到父级的最后一个子元素
+    */
+    console.log(ul.firstElementChild,ul.lastElementChild);// 输出第一个和最后一个父级的子元素
+    ul.firstElementChild.style.background = 'red'; // 第一个子元素背景色改为红色
+    ul.lastElementChild.style.background = 'green'; // 最后一个子元素背景色改为绿色
+    </script>
+</body>
+</html>

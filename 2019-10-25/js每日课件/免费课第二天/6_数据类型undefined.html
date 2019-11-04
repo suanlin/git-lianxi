@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        undefined  未定义
+            1.一个变量声明了没有赋值为undefined
+            2.函数的默认返回值为undefined
+            3.对象下没有指定属性就为undefined
+            4.基本类型自定义一个属性或者方法会为undefined
+    */    
+
+    // let a;
+    // console.log(a);
+
+    // let obj = null;
+
+    // obj = 'haha';
+
+
+
+    // let obj = {
+    //     "name":"朱光"
+    // }
+    // console.log(obj.age); //obj下压根没有age属性，所以结果为undefined
+
+    // let ary = [6,'好'];
+    // console.dir(ary);
+    // console.log(ary[2]);
+
+
+    let obj2 = true//{};
+    obj2.name = '刘宇';
+    obj2.suiyi = '随意'; //属性
+    obj2.fn = function(){} //方法
+    console.log(obj2.fn);
+
+
+
+
+    //f就为fn的函数返回值，
+    //******函数返回值就是return后面的数据，如果没有return默认为undefined
+    //函数定义
+    // function fn(){
+    //     return [1,2,3,4];
+    // }
+    // //函数调用
+    // let f = fn();//f接收fn函数调用的返回值
+    // console.log(f);
+
+
+
+    // function fn2(){
+
+    // }
+
+    /*
+        如何拿函数返回值？
+        1.用一个变量取接收函数名 + 括号，这个变量就是函数返回值
+        2.通过打印输出一个函数名 + 括号
+    */
+    // let ff = fn2();
+    // console.log(ff);
+
+    // fn2();
+    // console.log( fn2() );
+
+
+    // function fn3(){
+    //     console.log(1+2);//3
+    // }
+
+    // let y = fn3();
+    // console.log(y);
+
+
+
+    // console.log(undefined == null);//这是标准
+    console.log(undefined === null);//三等不但要比较值还要比较类型
+
+    // console.log('2' == 2);//双等会转换两边的类型，字符串跟数字比较，会转成数字
+    // console.log('2' === 2);
+
+
+</script>
+</body>
+</html>

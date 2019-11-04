@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        '',"",``字符串
+
+        new String('abc')
+
+        length只能读
+
+
+        substring(起始位置,结束位置但不包括结束位置)
+            截取字符串中指定位置的字符
+            如果只传一个参数，那么从第几位起，截取到字符串最后
+
+            第一位不能为负数，不然会转成0
+
+            第一位的数字要比第二位的数字小，不然也会自动调换位置。
+
+
+        substr(起始位置,截取几个)
+            截取字符串中指定位置的字符
+            如果只传一个参数，那么从第几位起，截取到字符串最后
+            
+        charCodeAt 
+            //把字符串转成unicode编码值
+
+        includes('指定字符串')
+            指定字符是否在整个字符串中出现，只要出现就返回true,否则false
+
+        indexOf(指定字符,从第几位开始)  从前往后找,返回的是指定字符串的下标
+
+        lastIndexOf(指定字符,从第几位开始) 从后往前找，返回的是指定字符串的下标
+
+
+
+
+    */
+
+    let s = new String('abc');
+    // s.length = 0;
+    // console.log(s.length);
+    // console.log('acb');
+
+    let str = 'abch932yrb0c2unxqp9';
+
+    // console.log(str.substring(4,7));
+
+    // console.log(str.substring(4,0));
+    // console.log(str.substr(4,3));
+
+    // console.log('a'.charCodeAt()); //把字符串转成unicode编码值
+
+    // console.log(str[0]);
+    // str.length = 0;
+
+    // console.log(str.includes('930'))
+    // console.dir(s);
+
+    let str2 = 'txt.html.css.js';
+
+    console.log( str2.substr( str2.lastIndexOf('.')+1) );
+
+
+</script>
+</body>
+</html>

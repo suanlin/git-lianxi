@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let json =  '{"name":"珠峰"}';
+    // console.log(json.name);
+    // console.log(JSON.parse(json).name);
+
+    // let obj = {name:'珠峰',age:18,fn:function(){},k:undefined}; //函数,undefined转不了
+
+    // let s = JSON.stringify(obj,function(key,val){
+    //     if(key === 'age'){
+    //         return 20;
+    //     }
+    //     // console.log(key);
+    //     return val;
+    // },10);
+
+    // console.log(s);
+
+
+    // let ary = [2,3,43,45,43]
+
+    // //随机把数组打乱
+    // ary.sort(()=>{
+    //     return Math.random() - 0.5;
+    // })
+
+    // console.log(ary)
+
+
+    // 5-10
+
+//    console.log( Math.round(Math.random() * (10-5)) + 5 );
+
+
+    function random(x,y){
+        return Math.round(Math.random() * (y-x)) + x;
+    }
+
+    console.log(random(0,10))
+
+
+
+
+
+</script>
+</body>
+</html>

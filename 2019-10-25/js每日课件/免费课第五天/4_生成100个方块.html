@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+/* #box{
+    width: 500px;
+} */
+#box div{
+    width:50px;
+    height:50px;
+    background: red;
+    position: absolute;
+    top:0;
+    left:0;
+    
+    /* float:left; */
+}
+</style>
+</head>
+<body>
+    <div id="box"></div>
+<script>
+    let html = '';
+    // for(let i=0;i<100;i++){
+    //     html += `<div>${i+1}</div>`;
+    // } 
+
+    let ary = ['pink','skyblue','yellow','green','red','yellowgreen'];
+
+    //先生成100个div，动态计算left和top
+    for(let i=0;i<10;i++){
+        for(let j=0;j<10;j++){
+            html += `<div style="background-color:${ary[i%6]};left:${i*50}px;top:${j*50}px;"></div>`;
+        }  
+    }
+    box.innerHTML = html;
+
+    const divs = document.querySelectorAll('#box div');
+    
+    /*
+        onmouseover  鼠标移入
+    */
+    
+    //当鼠标移入div的时候，获取出当前这个元素的left和top值，然后把left和top给backgroundPosition
+    for(let i=0;i<divs.length;i++){
+        divs[i].onmouseover = function(){
+            let l = this.style.left;
+            let t = this.style.top;
+            this.style.backgroundImage = 'url(./4.png)';
+            this.style.backgroundPosition = `-${l} -${t}`;
+        }
+    }
+
+</script>
+</body>
+</html>

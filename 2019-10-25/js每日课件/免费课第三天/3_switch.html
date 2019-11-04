@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+        <input type="text" id="text">
+        <input type="button" value="确定" id="btn">    
+<script>
+    /*
+        switch(相同的变量)
+            用于一个相同的变量有着不同的结果来进行判断
+            case 成立的条件 :
+                语句
+            break
+            default:
+                默认语句
+            break
+
+        当一个语句执行完成之后要用break去跳出判断整个判断，如果不加break那么会向下穿透.
+
+        能用switch判断的一定能用if，但是能用if的不一定能用switch。
+
+        也就是说，switch判断一定能改写成if，但是if不一定能改写成switch
+
+        
+
+        同学    赵宇->到
+                朱光->在
+                范耀辉->哼
+                王园园->哗哗
+    */
+
+
+    // if(st == '赵宇')
+
+    btn.onclick = function(){
+        let st = text.value;
+        switch (st) {
+            case '赵宇':
+                console.log('到');
+                break;
+            case '朱光':
+                console.log('在');
+                break;
+            case '范耀辉':
+                console.log('哼');
+                break;
+            case '王园园':
+                console.log('哗哗');
+                break;
+            default:
+                console.log('都不是');
+                break;
+        }
+        // console.log('在')
+    
+    }
+    
+</script>
+</body>
+</html>

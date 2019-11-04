@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height:50px;
+    background: red;
+    display: none;
+}
+</style>
+</head>
+<body>
+    <button id="btn">显示</button>
+    <div id="box">31232312</div>
+<script>
+    /*
+        变量（可变的量）:
+            把js中的数据存储到一个自定义的名字中，以便于复用
+
+        声明变量使用
+            var 自定义的名字 = 数据 
+
+            let
+
+        可以更改存储的值
+            let a = 5;
+            a = 6;
+            console.log(a); //6
+
+
+
+        常量（不可变的量）
+            const 自定义的名字 = 数据
+
+            定义之后就不能随意改变了,不然会报错
+                Uncaught TypeError: Assignment to constant variable.
+
+        不管是变量还是常量，在取名字的时候，不能有关键字或者保留字，也不能以数字开头
+
+
+        关键字:
+            系统已经使用的名字
+                let const var
+
+        保留字:
+            系统现在没有使用的名字，但是未来可能会使用
+                比如:class
+
+        一般取变量或者常量名字是按照小驼峰命名法
+            开头字母为小写，之后一个单词与一个单词之间的首字母大写
+
+            get Element By Id
+
+            getelementsbyclassname
+
+            getElementsByClassName
+
+    */
+
+    // let t = 123;
+
+    // let 123 = 5;
+
+
+
+
+
+    // let y = 'a';
+
+    // y = 'b';
+
+    // console.log(y);
+
+    const aaa = '珠峰培训';
+
+    // aaa = 'zhufeng';
+
+    // console.log(aaa);
+
+
+    // var box = document.getElementById('box');
+    // let box = document.getElementById('box');
+    const box = document.getElementById('box');
+
+    document.getElementById('btn').onclick = function(){
+        box.style.display = 'block';
+        box.style.height = '300px';
+        box.style.fontSize = '20px';
+        box.style.color = '#fff';
+        box.style.backgroundColor = 'green';
+    }
+
+    // console.log(typeof document.getElementById('box'));
+
+</script>
+</body>
+</html>

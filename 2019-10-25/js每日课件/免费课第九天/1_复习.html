@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+.active{
+    background: red;
+}
+</style>
+</head>
+<body>
+    <!-- <div  id="box1" index="1" class="box">1111</div> -->
+    <img src="rico.png" id="img">
+<script>
+    /*
+        属性节点指的是什么？
+            attributes下的成员
+
+        元素下别的属性为元素属性，其中有一个属性叫attributes，它下的所有节点都叫属性节点。
+
+
+        属性取名字都要为小写，不然也会转成小写的
+
+        写操作:
+            element.dataset.自定义的属性名 = 属性值  (就会呈现在行间)
+
+        读操作:
+            element.dataset.自定义的属性名
+
+            
+    */
+
+    // console.log(box1.attributes[0].value);
+
+    // box1.attributes[0].value = 'box3';
+
+    // function getClass(element){
+    //     let attrs = box1.attributes;
+    //     for(let attr in attrs){
+    //         if(attrs[attr].nodeName === 'class'){
+    //             return attrs[attr].nodeValue;
+    //         }
+    //     }
+    //     return null;
+    // }
+
+
+    // function setClass(element,newclass){
+    //     let attrs = box1.attributes;
+    //     for(let attr in attrs){
+    //         if(attrs[attr].nodeName === 'class'){
+    //             attrs[attr].nodeValue = newclass;
+    //         }
+    //     }
+    //     return null;
+    // }
+
+    // let element = {}
+
+    // element.className = getClass(box1);
+
+    // console.log(element);
+    // console.dir(setClass(box1,'gai'));
+
+    // console.log( document.nodeType );
+
+    // box1.attributes[0].value
+
+    // console.log(box1.attributes[2].nodeName);
+
+    /*
+        属性、属性节点
+        {
+            code:0,
+            attributes  2
+        }
+    */
+
+    // console.dir(box1.style.animation);
+    // console.log(box1.attributes[0].nodeType);
+
+    // box1.setAttribute('INDEX2','2');
+
+
+    // box1.setAttribute('className','active');
+
+    // box1.dataset.index2 = 1;
+
+    // console.log(box1.dataset.index2);
+
+
+    // console.log(img.getAttribute('src',2));
+
+
+
+</script>
+</body>
+</html>

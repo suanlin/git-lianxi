@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+.active{
+    background:yellow;
+}
+.btn_color{
+    color:green;
+}
+</style>
+</head>
+<body>
+    <button class="active btn_color">按钮</button>
+
+<script>
+    /*
+        contains  是否有指定class名，返回值为布尔值
+        add 添加class
+        remove 删除class
+        toggle 有就删，没有就添加  返回值就是是否有指定class，添加就是true，删除就是false
+        replace 替换 
+    */
+    var active = document.getElementsByClassName('active')[0];//集合
+    active.onclick = function(){
+        // active.className = 'active';
+        // active.classList.remove('btn_color');
+        // active.classList.add('btn_color2');
+        // console.log(active.classList.contains('btn_color'))
+        console.log(active.classList.toggle('btn_color'));
+        // active.classList.replace('active','btn_color')
+
+    }
+    // document.getElementsByClassName('active')[0].onclick = function(){
+    //     document.getElementsByClassName('active')[0].className = '';
+    //     alert(1);
+    // }
+</script>
+</body>
+</html>

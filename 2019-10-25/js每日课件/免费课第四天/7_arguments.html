@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    /*
+        在函数中有个叫做arguments的类数组，它代表*实参的集合*
+
+    */
+
+    //把所有的实参全部加一遍
+    // function fn(a,b){
+    //     // console.log(a + b);
+    //     // console.log(arguments);//类数组
+    //     var num = 0;
+    //     for(var i=0;i<arguments.length;i++){
+    //         num += arguments[i];
+    //     }
+    //     console.log(num);
+    // }
+    // fn(1,2,5,3,1,4,5,5,3,1,4,5,5,3,1,4,5,5,3,1,4,5,5,3,1,4,5,5,3,1,4,5,5,3,1,4,5);
+
+
+    // function fn(a,b){
+    //     // console.log(arguments);
+    //     console.log(b);
+    //     arguments[1] = 3;
+    //     console.log(b);
+    // }
+    // fn(1,2)
+
+    // var a = 10;
+    // function fn(a,b){
+    //     arguments[0] = 5;
+    //     console.log(a);
+    // }
+    // fn(a,2);
+    // console.log(a);
+
+
+    // var obj = {
+    //     a:10
+    // };
+    // function fn(a,b){
+    //     arguments[0].a = 5;
+    //     console.log(a.a);
+    // }
+    // fn(obj,2);
+    // console.log(obj.a);
+
+
+    // var obj = {//001
+    //     a:10
+    // };
+    // function fn(a,b){
+    //     console.log(a.a); //10
+    //     arguments[0].a = 5;
+    //     console.log(a.a); //5
+    //     a = {  //002
+    //         a:1
+    //     }
+    //     console.log(a.a);//1
+    // }
+    // fn(obj,2);
+    // console.log(obj.a);//5
+
+
+  
+    //箭头函数中没有arguments
+    // let fn = () => {
+    //     console.log(arguments);
+    // }
+    // fn(1,2,3)
+
+
+</script>
+</body>
+</html>

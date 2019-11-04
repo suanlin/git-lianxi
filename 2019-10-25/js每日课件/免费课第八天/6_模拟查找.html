@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:300px;
+    border:2px solid #aaa;
+}
+.active{
+    background: red;
+    color: #fff;
+}
+</style>
+</head>
+<body>
+    <input type="text" id="txt"/>
+    <!-- <input type="text" id="txt2"/> -->
+    <button id="search">查找</button>
+    <div id="box">
+        <p id="p">9月2日是开学报到的日子。重庆石柱土家族自治县中益乡小学的141名孩子早早来到学校，不一会儿，琅琅读书声就在这个偏远山乡响起来了。“学校变漂亮了！”六年级的郎宇彤说.新学期，同学们惊奇地发现，原先的水泥运动场地铺上了塑胶跑道，孩子们有了自己的足球场、篮球场，还有了崭新的宿舍和多功能活动室。　中益乡小学的变化是我国乡村教育“山乡巨变”的缩影。党的十八大以来，贫困地区义务教育学校办学条件显著改善，许多农村学校成为当地最美丽的一道风景线。除了农村义务教育寄宿生生活补助、免费营养午餐等普惠政策陆续落地，乡村学校教育质量也在稳步提升，让农村孩子从“有学上”到“上好学”</p>
+    </div>
+<script>
+   /*
+        点击按钮的时候把查询文字拿到手上
+        找到所有的内容文字 -> 字符串
+
+        '开学报到的日子'.split('学')
+        '开,报到的日子'
+        ['开','报到的日子'].join('<span>学</span>')
+
+        '开<span class="active">学</span>报到的日子'
+
+
+        作业:替换功能
+   */
+
+   let pv = p.innerText;
+   search.onclick = function(){
+        let val = txt.value;
+        let arr = pv.split(val);
+        p.innerHTML = arr.join('<span class="active">'+ val +'</span>')
+        console.log(arr);
+   }
+
+</script>
+</body>
+</html>

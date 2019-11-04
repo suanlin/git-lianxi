@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+<script>
+    /*
+        in 运算符
+            运算对象是否有指定属性,运算结果是个布尔值
+
+            console.log('sex' in obj);
+
+        for in
+            枚举对象下的每个属性(会枚举对象的原型)
+            for in上的变量就是每个属性名
+
+            for(let attr in obj){  attr就是每个属性名
+                要去获取对象属性的值，使用obj[attr]
+            }
+
+        对象没有length所以不能用for循环只能用for in循环
+
+            
+    */
+    // let obj = {
+    //     name:'蒋子桐',
+    //     age:30,
+    //     job:'前端开发'
+    // }
+
+    //for in循环
+
+    /*
+        obj.name  有就输出，没有就为undefined
+        obj['name']
+
+    */
+
+    //attr就是obj这个对象下的每个属性
+    // for(var key in obj){
+    //     console.log(obj[key]);
+    // }
+   
+
+    // console.log(obj.age === undefined);
+    // console.log('sex' in obj);
+
+    //把box的样式设置成obj中的属性和值
+    let obj = {
+        width:'100px',
+        height:'100px',
+        background:'skyblue',
+        border:'1px solid #000'
+    }
+    // box.style.width = obj.width;
+    // box.style.height = obj.height;
+    // box.style.background = obj.background;
+    // box.style.border = obj.border;
+
+    for(var attr in obj){
+        // console.log(attr);
+        box.style[attr] = obj[attr];
+    }
+    // console.dir(box);
+
+
+    //数组尽量不要用for in循环，因为性能没有for高
+    let ary = [true,'珠峰','18','李炎杰'];
+
+    // for(let i in ary){
+    //     // console.log(i); //数组是枚举不出length属性的
+    //     console.log(ary[i]);
+    // }
+
+    // console.log(ary);
+
+
+    //只要特殊格式的对象可以用for循环
+    // let obj2 = {
+    //     "0":true,
+    //     "1":'好的',
+    //     length:2
+    // }
+
+    // for(var i=0;i<obj2.length;i++){
+    //     console.log(obj2[i])
+    // }
+
+
+
+
+
+
+</script>
+</body>
+</html>

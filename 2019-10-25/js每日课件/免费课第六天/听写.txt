@@ -1,0 +1,43 @@
+1.ECMASCRIPT的数据类型有哪些？如何检测？
+
+2.什么时候出现undefined
+
+3.什么的时候出现null
+
+4.ccc not defined是什么意思？
+
+5.对象如何取值
+
+6.你操作过的元素属性有哪些，分别代表什么意思？
+
+7.下面如何输出？
+for(var i=0;i<6;i++){
+  alert(i);
+  for(var i=2;i<4;i++){
+    alert(i);
+  }
+}
+
+8.函数定义和函数调用过程中发生了什么？
+
+9.补充下面函数，结果为31
+
+ console.log( fn(1,2,3,4,4,5,5,7,) ) //31
+
+10.什么是赋值，什么是赋址？
+
+11.获取元素的方式有哪些？他们的区别是什么？
+
+12.
+   var a = '100px',b = '200px',c = 'red' 把a、b、c添加到下面字符串中
+
+'<div style="width:;height:;background:"></div>'
+
+13.console.log(0 == '');console.log('10' > '2');console.log(parseInt(''));
+
+console.log(Number([]));console.log(Number(false)) console.log(parseFloat('2.642px').toFixed(2))
+
+14.把第12题的变量放到一个对象中，并且批量赋值生成一个元素的样式
+
+15.console.log('' || 1 * '8' && '8'- 8 || '1px'*5 && parseInt('5px') && (typeof null) )
+

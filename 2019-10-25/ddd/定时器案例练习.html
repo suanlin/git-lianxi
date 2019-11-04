@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    #box{
+        width:200px;
+         height:200px ;
+         background: url(111.gif) center center no-repeat;
+          background-size: cover;
+        margin: 0 auto;
+        position: relative;
+        top: -220px;
+     transition: 1s linear;
+
+    } 
+    
+    </style>
+</head>
+<body>
+    <div id="box">
+    </div>
+    <button id="btn">停止广告</button>
+<script>
+    /*  setTimeout (()=> {
+         box.style.top = 0;
+     },2000 )
+ */
+   
+   btn.onclick = function(){
+        clearTimeout( aa )
+    }
+     //zhix执行里面的代码         
+    setTimeout((t) => {
+             box.style.top = 0;
+                   setTimeout(() => {
+                   box.style.top = '-300px';
+               }, 2000);
+           }, 2000,0);
+    //再执行setInterval  
+       let aa = setInterval(() => {
+            setTimeout((t) => {
+             box.style.top = 0;
+                   setTimeout(() => {
+                   box.style.top = '-300px';
+               }, 2000);
+           }, 2000,0);
+       }, 4000);
+
+</script>
+
+
+
+</body>
+</html>

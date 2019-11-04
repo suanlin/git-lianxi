@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        flat:
+            数组扁平化操作
+            不写参数的时候，拉平2个数组
+            如果有多维数组，参数可以指定(2)，拉平2个数组
+
+            如果是多个多维数组，可以使用Infinity来表示
+    */
+    let ary = [1,2,3,4,[5,[6,7,[8,9,[10]]]]]; 
+
+    console.log(ary.flat(Infinity))
+    
+    // let ary2 = [];
+    // //自己调用自己，叫递归
+    // function flat(ary) {
+    //     for(let i=0;i<ary.length;i++){
+    //         if(Object.prototype.toString.call(ary[i]) === '[object Array]'){
+    //             flat(ary[i])
+    //         }else{
+    //             ary2.push(ary[i]);
+    //         }
+    //     }
+    // }
+    // flat(ary)
+    // console.log(ary2);
+
+    // for(let i=0;i<ary.length;i++){
+    //     if(Object.prototype.toString.call(ary[i]) === '[object Array]'){
+    //         for(let j=0;j<ary[i].length;j++){
+    //             if(Object.prototype.toString.call(ary[i]) === '[object Array]'){
+
+    //             }else{
+    //                 ary2.push(ary[i][j]);
+    //             }
+    //         }
+    //     }else{
+    //         ary2.push(ary[i]);
+    //     }
+    // }
+
+    
+    
+</script>
+</body>
+</html>

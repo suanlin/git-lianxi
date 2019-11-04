@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt"/><button id="btn">发送</button>
+    <ul id="ul">
+        <!-- <li>111</li> -->
+    </ul>
+<script>
+
+    /*
+        parent.insertBefore(new,old)
+
+        parent.removeChild(ele)
+    */
+    btn.onclick = function(){
+        let val = txt.value;
+        let li = document.createElement('li');
+        li.onclick = function(){
+            ul.removeChild(this);
+            // this.remove();
+        }
+        li.innerText = val;
+        // ul.appendChild(li);
+        ul.insertBefore(li,ul.children[0]);
+        txt.value = '';
+    }
+</script>
+</body>
+</html>

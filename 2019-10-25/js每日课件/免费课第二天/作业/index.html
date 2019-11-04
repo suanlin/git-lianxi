@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="c" />
+    <select name="" id="box">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="text" id="z" /> =
+    <input type="text" id="x" />
+    <input type="button" value="计算" id="btn" />
+
+</body>
+
+</html>
+
+ <script> 
+    //  let btn = document.querySelector('#btn'),
+    //     c = document.querySelector('#c'),
+    //     z = document.querySelector('#z'),
+    //     x = document.querySelector('#x'),
+    //     box = document.querySelector('#box');
+     btn.onclick = function () {
+        let a = c.value,
+            b = z.value,
+            boxs = box.value,
+            xs = eval(a + boxs + b);
+        x.value = xs;
+    } 
+
+     // 内容不能为空
+    //     内容必须是能够转为数字的字符串
+    //     除数和取余数都不能为0
+    //     保留2位小数
+    
+</script> 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+                
+        // let ary = [3, 1, 5, 7, 9, 12, 6, 8];
+        // 数组之间两两进行比较，如果前一项大于后一项就交换位置
+        // 每一轮都会出现一个最大值放到数组最后面，循环轮数就是ary.length-1
+        // 每轮比较的次数ary.length-1(最后一项不比)—已经执行的轮数
+
+        /* function fn(ary) {
+            for (var i = 0; i < ary.length - 1; i++) {   // 控制比较的轮数
+                for (var j = 0; j < ary.length - 1 - i; j++) {  //  控制每轮比较的次数
+                    if (ary[j] > ary[j + 1]) {
+                        let item = '';
+                        item = ary[j];    
+                        ary[j] = ary[j + 1];
+                        ary[j + 1] = item;
+    
+                    }
+                }
+            }
+            return ary;
+        }
+        console.log(fn(ary)); */
+       /*  function fn(ary){
+            for(var i=0;i<ary.length-1;i++){
+                for(var j=0;j<ary.length-1-i;j++){
+                    if(ary[j]>ary[j+1]){
+                        let ietm = '';
+                        item = ary[j];
+                        ary[j] = aqwry[j+1];
+                        ary[j+1] = item;
+                    }
+                }
+            }
+            return ary;
+        }
+        console.log(fn(ary)) */
+        let ary = [3, 1, 5, 7, 9, 12, 6, 8];
+        function fn(ary){
+            for(var i=0;i<ary.length-1;i++){
+                for(var j=0;j<ary.length-1-i;j++){
+                    if(ary[j]>ary[j+1]){
+                        let item = '';
+                        item = ary[j];
+                        ary[j] = ary[j+1];
+                        ary[j+1] = item;
+                    }
+                }
+            }
+            return ary;
+        }
+        console.log(fn(ary))
+
+    </script>
+</body>
+
+</html>

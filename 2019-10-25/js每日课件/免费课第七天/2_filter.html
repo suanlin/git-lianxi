@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let ary = [1,2,3,4,5,6,7,8,9]; //找出大于5的数组，放到一个数组中
+
+    // let ary2 = [];
+
+    // ary.forEach(item=>{
+    //     if(item > 5){
+    //         ary2.push(item);
+    //     }
+    // });
+
+    /*
+        filter(function(item,index,all){
+            return true(条件)
+        })
+        返回一组在回调函数中条件成立的数据,返回一个新的数组，不改变原数组
+    */
+
+    console.log( ary.filter(item=>item>=5) );
+    console.log(ary);
+
+</script>
+</body>
+</html>

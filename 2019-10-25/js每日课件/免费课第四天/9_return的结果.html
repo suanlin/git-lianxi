@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <ul id="ul2">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+<script>
+    // function fn(a,b){
+    //     console.log(a+b);
+    //     return function(){
+    //         console.log(5);
+    //     }
+    // }
+    // let y = fn(1,2);
+    // console.log(y);
+
+    /*
+        document.querySelector  获取一个，就算是通过一组获取也是一个(第一个)
+        document.querySelectorAll 获取一组元素，就算是获取一个也是获取到一个集合，集合要加下标。
+
+    */
+
+    function $(ele){
+        return document.querySelectorAll(ele);
+    }
+
+    // console.log($('#ul1')[0])  
+    console.log($('#ul1 li'));
+    // console.log(document.querySelector('li'));
+
+    // console.log(document.querySelectorAll('#ul2 li'));
+
+</script>
+</body>
+</html>

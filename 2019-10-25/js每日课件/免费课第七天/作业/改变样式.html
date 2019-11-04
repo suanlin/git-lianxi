@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		#bigBox{position: relative;}
+		#box{height: 100px;border: 5px solid black;width: 100px;}
+		#box1{display: none;border: 10px solid red;position: absolute ;left:40%;top:30%;z-index: 200;width: 300px;height: 300px;background: white;}
+		#box1 ul{height: 50px;}
+		#box1 ul li{float:left;list-style-type: none;}
+		#red{background: red;}
+		#green{background: green;}
+		#yellow{background: yellow;}
+		#bg{background: black;display: none;position:absolute;top:0;left:0;width: 100%;height: 100%;opacity: 0.8;}
+	</style>
+	<body>
+		<div id="bigBox">
+			<div id="zi">请为下面的框设置样式：</div><button id="btn">点击设置</button>
+			<!-- <div id="box" style="background: red"></div> -->
+			<div id="box"></div>
+		</div>
+		<div id="bg"></div>
+			<div id="box1">
+				<ul>
+					<li>颜色</li>
+					<li><button id="red">red</button></li>
+					<li><button id="yellow">yellow</button></li>
+					<li><button id="green">green</button></li>
+				</ul>
+				<ul>
+					<li>宽度</li>
+					<li><button id="wid2">200px</button></li>
+					<li><button id="wid3">300px</button></li>
+					<li><button id="wid4">400px</button></li>
+				</ul>
+				<ul>
+					<li>高度</li>
+					<li><button id="hei2">200px</button></li>
+					<li><button id="hei3">300px</button></li>
+					<li><button id="hei4">400px</button></li>
+				</ul>
+				<ul>
+					<li></li>
+					<li><button id="yes">确定</button></li>
+					<li><button id="hui">恢复</button></li>
+				</ul>
+			
+		</div>
+<script>
+	const btn = document.getElementById('btn');
+	const box = document.getElementById('box');
+	const uls = document.querySelectorAll('ul');
+	const bg = document.getElementById('bg');
+	const box1 = document.getElementById('box1');
+	btn.onclick = function(){
+		bg.style.display = 'block';
+		box1.style.display = 'block';
+	}
+
+	let ary = ['background','width','height'];
+
+	for(let i=0;i<uls.length;i++){
+		fn(i,ary[i]);
+	}
+	
+	function fn(num,attr){
+		let ul = uls[num];
+		let lis = ul.querySelectorAll('li');
+		for(let i=1;i<lis.length;i++){
+			lis[i].onclick = function(){
+				if(num === uls.length-1){
+					if(i === 1){
+						//确定
+						bg.style.display = 'none';
+						box1.style.display = 'none';
+					}else if(i === 2){
+						//恢复
+						bg.style.display = 'none';
+						box1.style.display = 'none';
+						//批量设置css样式（行间）
+						box.style.cssText = 'border:3px solid #000;width:100px;height:100px;background:#fff';
+					}
+				}else{
+					box.style[attr] = this.innerText;
+				}
+				
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+	
+	
+	
+	// const red = document.getElementById('red');
+	//
+
+	
+
+	// red.onclick = function(){
+	// 	box.style.background = 'red';
+	// }
+
+</script>
+</body>
+</html>

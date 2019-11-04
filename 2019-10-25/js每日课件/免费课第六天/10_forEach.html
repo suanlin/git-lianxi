@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        forEach(callback,修改this指向):
+            数组的循环
+
+                默认this为window
+
+        callback(item,index,all)
+    */    
+
+    let arr = [1,2,3,4];
+
+    arr.forEach(function(item,index,all){
+        // console.log(item,index,all);
+        console.log(this);
+    },document);
+
+
+
+</script>
+</body>
+</html>

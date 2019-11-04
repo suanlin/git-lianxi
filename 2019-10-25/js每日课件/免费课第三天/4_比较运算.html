@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        在js中一个等号代表赋值
+            obj.style.display = 'block';
+
+        两个等号代表比较 ==
+            1 == 2
+            在比较的过程当中，如果是2个等号，左右两边的类型会进行转换(统一)
+           
+            双等只比较值，不比较类型
+
+            1 == '1'  true
+
+            字符串与字符串比较，比的是unicode
+            字符串与数字比较，比的是数字
+            对象与对象比较，比较的地址
+            null和undefined和别的数据类型不相等
+            NaN不等于NaN
+            对象和数字进行比较的时候,对象会先使用toString再转成数字，最后进行比较{}最终会转NaN
+
+        三个等号代表全比较
+
+            不但要比较值，还要比较类型
+            1 === 1  true
+
+            1 === '1'  false
+
+            因为三等不用进行类型的转换，所以性能要比双等高。
+
+
+            != 不等
+                '1' != '2'  true
+
+                5 != 6  true
+
+            !== 不全等
+                '1' !== 1
+                
+
+
+
+
+
+
+    */
+
+
+
+    // console.log(1 == '1');
+    // console.log(0 == false); //数字跟布尔值进行比较的时候，布尔值会转成数字再进行比较
+    // console.log(0 == null);//null还是undefined都不等于别的数据类型
+    // console.log(0 == {});//对象和数字进行比较的时候会先使用toString再转成数字，最后进行比较{}最终会转NaN
+
+    // console.log('21' > '2000');//unicode编码进行比较
+    // console.log({} == {});//对象跟对象比较，比较的是空间地址
+
+    console.log('px'*1 == 'px'*1);
+
+    // let v = '0';
+
+    // console.log(parseFloat('0') == '');// ''会转成0
+
+    // let ary = [];//001
+    // let ary2 = [];//002
+
+    // console.log(ary == ary2);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" ></div>
+<script>
+    /*
+        原始数据类型（基本、简单）
+
+        引用数据类型（复杂、复合）
+    */    
+
+    /*
+        标准key值要加上双引号，不过js本身比较随意的可以不加，但是在真实的开发中
+        后台传输的数据是标准的格式
+
+        . 下的
+
+        输出对象下的key值，就等于这个key对应的value值
+
+        我们叫name、age、ary为属性名
+        朱光、18、[1,2,3,4] 为属性值
+
+        box.style.display = 'none'
+    */
+    let obj = {
+        "name":"朱光",
+        "age":18,
+        "ary":[1,2,3,4],
+        "style":{
+            "display":"none"
+        }
+    }
+
+    // console.log(obj.ary);//"朱光"
+    console.log(obj.style.display); //'none'  读操作 打印输出
+
+    obj.style.display = 'block';  //写操作 赋值
+
+
+    // document.getElementById('box').style.display = 'none';
+    // console.dir(document.getElementById('box'));
+
+    document.getElementById('box').className = 'abc';
+
+
+
+
+</script>
+</body>
+</html>

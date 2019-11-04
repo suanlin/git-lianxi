@@ -1,0 +1,40 @@
+一、问答题
+1、JS中常用的数据类型有哪些？ 
+基本数据类型 数字 字符串 布尔 undefined  null
+引用数据类型 function  正则 Math  Date数组
+2、浏览器中常用的内核有哪些？
+3、JS中创建变量的几种常用方式？
+var let const  class
+
+4、其他数据类型转布尔为false的几种情况？
+0 false '' undrfined null  NaN
+二、练习题
+1、var a = 'abc' + 123 + 456;
+      var b = '456' - '123';
+      var c = 100 + true + 21.2 + null + undefined + "Tencent" + [] + null + 9 + false;
+      let d = [] + [];
+      let e = [] + {};
+      let f = 1 + true + null + [3.1415926] + '小花' + [] + null + undefined;
+      let g = 3 - '1px';
+     console.log(a,b,c,d,e,f,g);
+'abc123456'
+'NaNTencentnull9false'
+0
+'[objcet objcet]'
+'13.1415926小花nullundefined'
+NaN
+2、Number('')//0
+     Number('-1')//-1
+     Number(23.2.2)
+     Number(null)// 0 
+     Number('12px')//NaN
+     !parseInt('')// true  空字符串就是NaN 然后在取反
+     !!parseInt('12.5px')
+     parseFloat('12.5px')//12.5
+     isNaN('')//false
+     isNaN('12px')//true
+     isNaN(NaN)// true
+
+3、let a = 12;
+      let b = a
+      console.log(b)// 12

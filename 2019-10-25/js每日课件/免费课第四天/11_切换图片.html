@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    border:none;
+    font-size: 0;
+}
+#box{
+    width:448px;
+    border: 1px solid #000;
+    position: relative;
+    margin:0 auto;
+}
+#btn1{
+    float: left;
+    font-size: 16px;
+}
+#btn2{
+    float: right;
+    font-size: 16px;
+}
+.box1{
+    width:448px;
+    position: absolute;
+    top:45%;
+}
+img{
+    width:448px;
+    height:336px;
+}
+</style>
+</head>
+<body>
+    <div id="box">
+        <div class="box1">
+            <button id="btn1">上一张</button>
+            <button id="btn2">下一张</button>
+        </div>
+        <img src="./images/1.png" id="img"/>
+    </div>
+<script>
+
+    //点击下一张
+    let page = 1;
+    btn2.onclick = function(){
+        // page ++;
+        // if(page >= 8){
+        //     page = 8;
+        // }
+        // img.src = './images/'+(page)+'.png';
+        
+        // if(page < 8){
+        //     page ++;
+        //     img.src = './images/'+(page)+'.png';
+        // }
+
+
+        page ++;
+        if(page > 8){
+            page = 1;
+        }
+        img.src = './images/'+(page)+'.png';
+    }
+
+    btn1.onclick = function(){
+        // page --;
+        // if(page <= 1){
+        //     page = 1;
+        // }
+        // img.src = './images/'+(page)+'.png';
+
+        page --;
+        if(page< 1){
+            page = 8;
+            // console.log(page)
+        }
+        img.src = './images/'+(page)+'.png';
+        
+    }
+
+</script>
+</body>
+</html>

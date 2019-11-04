@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+        }
+
+        .btn1 {
+            border: 2px solid #000;
+        }
+
+        .btn2 {
+            background: red;
+        }
+
+        .btn3 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">a</button>
+    <button id="btn2>b</button>
+    <button id=" btn3">c</button>
+    <div id="box" class="btn4">1</div>
+    <script>
+        /*
+            文本:innerText
+            内容:innerHTML
+            表单内容:value  
+    
+            className
+    
+    
+            页面中通过元素属性获取出来的***都是字符串***
+    
+            classList
+                add  添加一个或者多个class
+                contains  指定的class是否存在，存在就是true，否则false
+                remove  删除一个或者多个class
+                replace(旧的class,新的class)  替换class
+                toggle(开关)
+        */
+        const box = document.getElementById('box');
+
+        console.dir(box.classList)
+
+        a.onclick = function () {
+
+            box.classList.remove('btn2')
+            box.classList.add('btn1');
+
+        }
+        b.onclick = function () {
+            if (box.classList.contains('btn1')) { // 检测class  btn1是否存在
+                box.classList.remove('btn1'); // 移除  class btn1
+                box.classList.add('btn1'); // 添加class btn1
+            }
+        }
+        c.onclick = function () {
+            box.classList.add('btn2');
+        }
+
+
+
+
+
+
+    </script>

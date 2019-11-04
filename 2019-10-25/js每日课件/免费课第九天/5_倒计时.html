@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  
+    <div id="box"></div>
+<script>
+    /*
+        倒计时:
+            未来的时间 - 现在多少时间 = 剩下多少时间
+
+            服务器时间一般是按照秒来计算的，如果你在工作中设置完时间之后显示1970就说明要*1000把秒转成毫秒
+    */
+
+    //未来的时间
+    let time = new Date('2019 9 7 14:55:00');//未来工作一定要获取服务器的时间，要设置一个安全的时间
+
+    //当前时间
+    // let now = new Date(1567744800 * 1000);
+    let now = new Date();
+
+    //毫秒转秒要 / 1000
+    // console.log(time.getTime());
+    // console.log(+time);
+
+
+    /*
+        1.先除以1000把毫秒转成秒
+
+        2.一分钟60秒，一小时60分也就是3600秒，一天为24小时，86400
+
+        24 * 60 * 60
+
+    */
+
+    
+
+    /*
+        好记忆
+            let t = Math.floor((time - now)/1000);
+            let day = Math.floor(t/86400);
+            t %= 86400;
+            let h = Math.floor(t/3600);
+            t %= 3600;
+            let min = Math.floor(t / 60);
+            t%=60;
+    */
+    let t = Math.floor((time - now)/1000);
+    let day = Math.floor(t/86400);
+    t %= 86400;
+    let h = Math.floor(t/3600);
+    t %= 3600;
+    let min = Math.floor(t / 60);
+    t%=60;
+
+    console.log(day + '天'+h+'时'+min +'分' + t +'秒');
+
+    // let day = Math.floor(t/86400);
+    // let min = Math.floor(t / 60);
+    // let se =  Math.floor(t%60);
+    // let h = Math.floor(t/3600);
+
+    /*
+        125秒
+            2分5秒
+
+        125/60  2.xx -> Math.floor(2.xx) -> 2
+
+        125%60 5秒
+    */
+
+    // console.log(day + '天'+Math.floor(h%24)+'时'+ Math.floor(min%60) +'分' + se+'秒');
+
+
+
+
+
+
+    // console.dir(document.getElementById)
+    console.log(window);
+
+
+
+   
+</script>
+</body>
+</html>

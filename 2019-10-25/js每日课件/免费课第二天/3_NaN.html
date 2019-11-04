@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        当做了一次非法的数学运算，会出现NaN
+
+        NaN是number类型,自己不等于自己
+
+        isNaN() 去判断括号中的值是否为NaN,如果是NaN，会返回一个true的结果
+        否则就是false
+
+        isNaN喜欢NaN，讨厌数字
+
+        NaN 一定是假的
+    */    
+    
+    // console.log(isNaN('px'*12))
+    // let n = '1';
+    // console.log(('px'*12) ==('px'*12))
+
+    /*
+        isNaN('')-> Number('') -> 0 0是数字，所以为false
+    */
+    console.log(isNaN(''));//isNaN会先用Number转一波，才判断是否为NaN
+
+</script>
+</body>
+</html>

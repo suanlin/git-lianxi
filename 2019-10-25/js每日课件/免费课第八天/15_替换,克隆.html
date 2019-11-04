@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body id="body">
+    <div id="box">1</div>
+<script>
+    /*
+        parent.replaceChild(new,old)  //元素的替换
+
+        parent.cloneNode();  //默认只克隆当前元素，不会克隆子级
+        如果要克隆子级，那么在参数中传入true
+    */    
+   document.onclick = function(){
+    //    let box2 = document.createElement('div');
+    //    box2.innerHTML = '兄弟来砍你了';
+    //    body.replaceChild(box2,box);
+        body.appendChild(box.cloneNode(true));
+   }
+</script>
+</body>
+</html>

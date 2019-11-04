@@ -1,0 +1,91 @@
+  1、把下面的程序改写成为三元运算符，并算出结果
+ let a = 12;
+ if (a >= 0 && a <= 20) {
+     if (a % 2 === 0) {
+         a += 2;
+     }
+ } else {
+     a -= 2;
+ }
+ console.log(a);
+
+2、算出输出的结果
+
+let a = '10';
+a == 10 ? a++ : a--;
+console.log(a);
+​
+let b = '10';
+switch (b) {
+    case 10:
+        b++;
+        break;
+    default:
+        b--;
+}
+console.log(b);
+
+3、输出结果
+
+!(!"Number(undefined)");
+​
+isNaN(parseInt(new Date())) + Number([1]) + !undefined;
+​
+Boolean(Number("")) + !isNaN(Number(null)) + Boolean("parseInt([])") + !!null;
+​
+parseFloat("1.6px") + parseInt("1.2px") +  parseInt(null);
+​
+isNaN(Number(!!Number(parseInt("0.8"))));
+​
+console.log(1 + "2" + "2");
+​
+parseFloat("0");
+​
+Number("");
+​
+ "parseInt(null)" + 12 + !!Number(NaN);
+​
+! (isNaN("")) + parseInt(NaN);
+​
+!parseInt(null) + !isNaN(null);
+
+! false == !! true
+
+parseInt('35.4.2') === parseFloat('35.A.2')
+
+!Number(undefined) == isNaN( Boolean('') )
+
+[] == []
+'' == 0
+[0] == false
+true == 1
+{} == ‘’
+'12' > 2
+12’ > '2'
+[] == 0
+0 == null
+'{}' == 1
+undefined == null
+null == undefined 
+{name:1} == {name:1}
+undefined == 0
+
+4、输出以下结果
+let i=0  
+console.log(i++ == ++i)  
+console.log(++i == i++)
+console.log(i);
+
+5、如何判断一个数字为整数？（用浏览器的方法来判断）  
+6、把其他数据类型转换为数字有几种转换方式？ 
+7、js的数据类型有哪些
+基本数据类型   数字 字符串  布尔  undefined  null
+Number  String  Boolean   undefined   null 
+引用数据类型   function  {}   []  Date   Math  用 typeof 查看
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px !important;
+}
+
+</style>
+</head>
+<body>
+    <div id="box" style="width:50px" v-model="arr">
+        1
+        <!--哈哈-->
+    </div>
+<script>
+    /*
+        js:
+            ECMAscript
+
+            DOM:
+                document  object model （文档对象模型）
+
+                通过document提供的api，赋予开发者操作页面的能力
+
+                被组织在一个属性结构中，DOM树
+
+                难点就是弄清结构关系，加强记忆即可
+
+                页面的标签和DOM中的对象是一一映射的关系，操作对象就等同于操作标签。
+
+                在页面中，所有的内容都叫节点。node
+
+
+                为什么标签叫元素？
+                    因为标签为元素节点
+
+                检测数据类型，typeof
+                检测节点类型，nodeType
+
+                    元素节点 1
+                    文本节点 3  包括文本和空文本
+                    注释节点 8
+                    属性节点 2
+                    文档节点 9
+
+                !important(10000) > 行内(1000)  > id(100) > class(10) > 标签(1)  > * 0
+
+                childNodes 集合，要访问某个阶段要使用下标
+                    找到某个元素下的**所有**子级  
+
+
+                attributes 元素属性的映射表
+                    NamedNodeMap {0: id, 1: style, id: id, style: style, length: 2}
+
+                nodeName 节点属性名称
+                nodeValue 节属性值
+            BOM
+    */    
+
+//    console.dir(box);
+    // console.log(box.nodeType);//1
+    // console.log(typeof box.childNodes[0]);//集合
+    // console.log(box.childNodes[0].nodeType); //3
+    // console.log(document.nodeType);//9
+    // console.log(box.childNodes[1].nodeType);//8
+    // console.dir(box.childNodes[1].nodeValue);
+    // console.log(box.attributes[0].nodeValue);
+
+    let obj = {
+        arr:[1,2,3]
+    }
+    for(let i=0;i<box.attributes.length;i++){
+        if(box.attributes[i].nodeName === 'v-model'){
+            console.log(obj[box.attributes[i].nodeValue]);
+        }
+    }
+
+    // console.log(box.attributes);
+
+    console.log(box.childNodes);
+
+</script>
+</body>
+</html>

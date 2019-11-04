@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    /*
+        [1,2,1,1,1,1]
+
+        i=0,j=1
+        i=0,j=2
+
+        i=1
+        j=2
+
+    */
+
+    let ary2 = [1,1,1,1,2,2];
+    //
+    let num = 0;
+    for(var i=0;i<ary2.length;i++){
+        for(var j=i+1;j<ary2.length;j++){
+            alert('大循环'+i+'小循环'+j);
+            if(ary2[i] === ary2[j]){
+                ary2.splice(j,1);
+                j--;
+            }
+        }
+    }    
+    // console.log(num);
+    console.log(ary2);
+</script>
+</body>
+</html>

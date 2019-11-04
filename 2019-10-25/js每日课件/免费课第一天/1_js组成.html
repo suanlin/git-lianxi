@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height:100px;
+    background: red;
+}
+</style>
+
+</head>
+<body>
+    <!-- <div id="box" onclick="alert('珠峰')"></div> -->
+    <div id="box"></div>
+    <!-- <div id="box2"></div> -->
+
+<script>
+    /*
+        通过id的方式去获取
+            css: #box
+            js: document.getElementById('box')  元素节点
+    */
+
+    // console.log('珠峰');
+
+    // console.log(document.getElementById('box'));
+    //document.getElementById('box');
+    // console.log(1+2);
+
+    // console.log(document.getElementById('box'))
+
+    /*
+        当点击box这个元素的时候做一件弹出珠峰的一个弹框
+
+        function  函数
+    */
+    document.getElementById('box').onclick = function(){
+        alert('珠峰');
+        console.log(1+2);
+    }
+
+    //定义函数
+    // function fn(){
+    //     alert('珠峰');
+    // }
+
+    // //函数的调用
+    // fn();
+    
+
+
+
+
+</script>
+</body>
+</html>

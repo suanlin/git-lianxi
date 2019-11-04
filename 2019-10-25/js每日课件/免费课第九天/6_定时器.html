@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width: 50px;
+    height:200px;
+    border:1px solid #000;
+    position: fixed;
+    bottom: 0;
+    right:-52px;
+    transition: .5s;
+}
+</style>
+</head>
+<body>
+    <button id="btn">拆弹砖家</button>
+<div id="box">是兄弟就来砍我</div>
+<script>
+    /*
+        定时器来调用函数
+
+            炸一次  到了那个时间就炸，炸完就没了
+
+            setTimeout(回调函数||字符串函数,什么时候执行函数(时间，毫秒),第一个回调函数的参数)
+
+            返回值为一个数字(为当前定时器的编号)
+
+            清除定时器:
+                clearTimeout(定时器的编号)
+
+            连续炸  每到了某个时间就炸次，不断连续的炸
+                setInterval(回调函数||字符串函数,什么时候执行函数(时间，毫秒),第一个回调函数的参数)
+            清除定时器:
+                clearInterval(定时器的编号)
+
+            不管是哪个清除定时器的方式（clearTimeout||clearInterval）都可以清除定时器
+
+    */
+    // setTimeout(function(){
+    //     box.style.right = 0;
+    //     setTimeout(function(a,b){
+    //         box.style.right = '-52px';
+    //         console.log(a+b);
+    //     },3000,1,2);
+    // },5000);
+
+
+    // let timer = setTimeout(function(){
+    //     alert('bong!~~~~~');
+    // },3000);
+
+
+    btn.onclick = function(){
+        clearInterval(timer);
+    }
+
+    // let timer2 = setTimeout(function(){
+    //     alert('bong!~~~~~');
+    // },3000);
+
+    // console.log(timer,timer2);
+
+
+    // function fn(){
+    //     console.log(1);
+    // }
+    // fn.inxxxs = {
+    //     request:function(){
+    //         alert('呵呵');
+    //     }
+    // }
+    // fn.inxxx.request();
+    // console.log(fn);
+
+    // console.log(fn.inxxx)
+
+    // document.onclick = fn;
+
+
+    let timer = setInterval(function(){
+        console.log('炸');
+    },10);
+
+
+
+
+</script>
+</body>
+</html>

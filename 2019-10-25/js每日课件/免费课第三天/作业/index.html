@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt"/> 
+    <select name="" id="sele">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+        <option value="￥">￥</option>
+    </select>
+    <input type="text" id="t1"/> = 
+    <input type="text" id="t2"/> 
+    <input type="button" value="计算" id="btn"/> 
+<script>
+    /*
+        当点击计算按钮的时候，获取到t1，t2，option的value，然后进行运算
+
+
+        内容不能为空
+        内容必须是能够转为数字的字符串
+        除数和取余数都不能为0
+        保留2位小数
+
+
+    */
+
+    btn.onclick = function(){
+        let tv = txt.value;
+        let t1v = t1.value;
+
+        if(tv != ''){ //tv不能为空
+            if(t1v != ''){//t1v不能为空
+                let sv = sele.value;
+                let count = 0;
+
+                //在运算之前，判断一下内容是否为能转成数字的字符串
+                //12px  5.1px  px5
+                if(!isNaN(parseFloat(tv))){ //不是NaN，是数字的时候
+                    //0 是假的
+                    if(!isNaN(parseFloat(t1v))){//不是NaN，是数字的时候
+                        tv = parseFloat(tv);
+                        t1v = parseFloat(t1v);
+                        if(sv == '+'){
+                            count = tv*1 + t1v*1;
+                        }else if(sv == '-'){
+                            count = tv - t1v;
+                        }else if(sv == '*'){
+                            count = tv * t1v;
+                        }else if(sv == '/'){
+                            if(t1v != 0){
+                                count = tv / t1v;
+                            }else{
+                                alert('除数不能为0')
+                            } 
+                        }else if(sv == '%'){
+                            count = tv % t1v;
+                        }
+                        //不管上面如何判断的，都会执行59行代码
+                        t2.value = count;
+
+                    }else{
+                        alert('第二个input中不是一个合法的数字');
+                    }
+                }else{
+                    alert('第一个input中不是一个合法的数字');
+                }
+
+            }else{
+                alert('第二个input中要填值');
+            }
+        }else{
+            alert('第一个input中要填值');
+        }
+    }
+
+</script>
+</body>
+</html>

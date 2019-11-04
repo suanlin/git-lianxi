@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        对象：引用类型 一个对象会开辟一个16进制的空间。
+        对象的key值都是字符串
+        {
+            key1:value1,
+            key2:value
+        }
+        []：
+            key:0-1-2-3  下标
+            value:数组的每一项
+            如何获取里面的值，使用下标，数字从0开始计数
+            还有length属性
+                既能读也能写
+
+
+        正则
+        时间
+        ...
+
+        new Object
+
+
+        凡是能用.的地方都能使用[]
+
+        []
+            数组、下标、.
+
+
+        删除属性使用delete
+
+        如果key值有多个相同的，后面的会覆盖前面的。
+
+    */   
+    
+    //name是个字符串，对象的key值都是字符串
+    let obj = {
+        nam:'范耀辉',
+        age:18,
+        job:'资深开发',
+        sex:'男',
+        age:81
+    }
+    // console.log(window.name);//''
+    let aaa = 'job';
+    //中括号内最后的结果必须要放字符串
+    //什么时候会用[]不用. 就是在key值会发生变化的时候才使用(.后面不能用变量)
+    // console.log(obj[aaa]);
+
+    // obj.sex = '';
+
+    // delete obj.sex;
+
+    // console.log({});
+
+
+    let ary = [1,2,true,{aaa:123},[false,'yu']]; //new Array
+
+
+    //读操作
+    console.log(ary.length); //数组的长度，也就是说数组中有几个数据
+
+    //写操作
+    // ary.length = 1;
+
+    // console.log(ary); //[1]
+
+    ary.length = 15;
+    console.log(ary[8]);// undefined
+    ary.haha = '哈哈';
+    console.log(ary);
+
+
+    
+</script>
+</body>
+</html>  

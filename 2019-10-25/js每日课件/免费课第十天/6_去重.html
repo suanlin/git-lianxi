@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        数组去重
+
+            new Set([1,2,3,4]) -> Set是不允许成员有重复项
+            new Set([1,2,3,4]).size
+
+            console.log([...new Set(ary)])
+
+    */
+    // let ary = [1,2,3,4,4,3,1,2,6];
+
+    // for(let i=0;i<ary.length;i++){
+    //     for(let j=i+1;j<ary.length;j++){
+    //         if(ary[i] === ary[j]){
+    //             ary.splice(j,1);
+    //             j--;
+    //         }
+    //     }
+    // }
+
+    // function unique4(arr){
+    //     var hash=[];
+    //     for (var i = 0; i < arr.length; i++) {
+    //         for (var j = i+1; j < arr.length; j++) {
+    //             if(arr[i]===arr[j]){
+    //                 ++i;
+    //             }
+    //         }
+    //         hash.push(arr[i]);
+    //     }
+    //     return hash;
+    // }
+
+
+    // let ary=[1,2,3,4,4,9,5,7,99,9,9,];
+    /*
+       
+        对象的key如果是数字，那么会按照从小到大的顺序排列
+        {
+            1:'',
+            2:'',
+            3:'',
+            4:'',
+            5:'',
+            9:''
+            99:'',
+        }
+
+
+    */
+    // let obj = {};
+    // for (let i = 0; i < ary.length; i++) {
+    //     obj[ary[i]] = '';
+    // }
+    // ary.length = 0;
+    // for (let attr in obj) {
+    //     ary.push(Number(attr))
+    // }
+
+
+    // let ary = [1, 1, 2, 0, 2, 3,5,9, 4,2, 5, 6];
+    // let ary2 = [];
+    // for (let i = 0; i < ary.length; i++) {
+    //     let ary3 = ary.filter(item => item == i);
+    //     if (ary3.length == 0) {
+    //         ary.pop();
+    //     } else if (ary3.length == 1) {
+    //         ary2.push(ary3);
+    //     } else {
+    //         ary2.push(ary3.shift());
+    //     }
+    // }
+
+
+    // let ary = [5, 6.2, 8.85, 1, 3, 6.231, 5, 6, 1, 3, 5, 2.5, 3.11, 0.3, 1, -5.5, 6, 2, 1, 3.3, 24, 51, 2,
+    //   31.1, 5, 512, 52, 85.2, 5, 1, 42, -3, -132];
+    // function shouge(ary, a = 1, b = 0, max, min) {//去重，排序，(有效位数0,1,2,3(慎用3) 过滤有效数字0,1, 最大值，最小值，)
+    //   if (max == undefined) {
+    //     max = 0; ary.forEach(item => { if (max < item) { max = item } })
+    //   }
+    //   if (min == undefined) {
+    //     min = 0; ary.forEach(item => { if (min > item) { min = item } })
+    //   }
+    //   let ary2 = [];
+    //   let c; if (a == 0) { c = 1 } if (a == 1) { c = 0.1 } if (a == 2) { c = 0.01 } if (a == 3) { c = 0.001 }
+    //   for (let num = max; num > min - c; num = num - c) {
+    //     for (let i = 0; i < ary.length; i++) {
+    //       if (b == 1) { ary[i] = +ary[i].toFixed(a) }
+    //       if (ary[i] >= +num.toFixed(a)) {
+    //         if (ary[i] == +num.toFixed(a)) {
+    //           ary2.push(+num.toFixed(a));
+    //           break;
+    //         }
+    //       }
+    //     }
+    //   } return ary2
+    // }
+    // let ab=new Date()
+    // let vv = shouge(ary)
+    // let bb=new Date()
+    // console.log(vv)
+
+
+    // console.log(ary2.flat());
+
+
+    // let ary2  = [];
+    // for (let k = 0; k < ary.length; k++) {
+    //     if (ary2.includes(ary[k])) {
+    //         continue;
+    //     }else{
+    //         ary2.push(ary[k]);
+    //     }
+    // }
+
+    // console.log(ary2);
+    /*
+        {
+           1:1
+        }
+    */
+    //[1,4,2,3]
+//     let ary=[1,2,3,4,4,4,9,5,7,99,9,9,];
+//    function fn(ary){
+//         let obj = {};
+//         for(let i=0;i<ary.length;i++){
+//             let item = ary[i];
+//             if(obj.hasOwnProperty(item)){//当前对象有没有item（1）
+//             //有重复项
+//                 ary[i] = ary[ary.length-1];  //[1,4,2,3]
+//                 ary.length--;
+//                 i--;
+//             }else{
+//                 //没有就添加
+//                 obj[item] = item;
+//             }
+//         }
+//         obj = null;
+//    }
+//    fn(ary);
+//    console.log(ary);
+
+
+
+    // console.log(unique4(ary));
+
+    // console.log([...new Set(ary)])
+
+// var a=[1,2,3,1,2];
+// for(var i=0; i<a.length; i++){
+//     let b = a[i];
+//     for(j=i+1; j<a.length; j++){
+//     let c = a[j];
+//     if(b===c){
+//         a.splice(j,1);
+//         j--
+//     }
+//     }
+// }
+// console.log(a)
+
+    var a=[1,2,3,4,1,3];
+    for(var i=0; i<a.length; i++){
+        var b = a[i];
+        for(var j=i+1; j<a.length; j++){
+            var c = a[j];
+            if(b===c){
+                a.splice(j,1)
+                j--
+            }
+        }
+    }
+    console.log(a)
+</script>
+</body>
+</html>

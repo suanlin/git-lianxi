@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="text">
+    <input type="text" id="text2">
+    <input type="button" value="确定" id="btn">
+
+<script>
+    /*
+        编程语言就要有逻辑判断
+        if 如果
+
+        if( 条件 ) 条件最后会转化为布尔值
+
+        //当做一次拦截
+        if(条件成立){ true
+            条件成立之后的程序
+        }
+
+        if(条件){
+            //成立
+        }else{
+            //不成立
+        }
+
+        if(条件一){
+
+        }else if(条件二){
+
+        }
+        
+        
+        if(条件一){
+
+        }else if(条件二){
+
+        }else{
+
+        }
+
+
+
+
+    */
+
+    // let a = 3;
+    //a大于10就等于10     如果a > 10 那么a就等于10
+    // if(a > 10){
+    //     a = 10;
+    // }
+
+    // let num = 1;
+    // if(num - 1){
+    //     console.log('进来')
+    // }
+
+    // console.log(a);
+
+    // let num = 6;
+    /*
+        如果num < 10就前面补零
+        否则正常执行
+        都为字符串
+    */
+
+    // if(num < 10){
+    //     num = '0'+num;
+    // }else{
+    //     num = '' +num;
+    // }
+    // console.log(num);
+
+
+    /*
+        年龄要年轻
+        性格好
+        性别女
+        美
+    */
+    // let person = 
+    btn.onclick = function(){
+        let person = text.value;
+        if(person < 25){
+            if(text2.value == '妹纸'){
+                console.log('处对象');
+            }else{
+                console.log('交朋友');
+            }
+        }else{
+            console.log('不好意思');
+        }
+
+        //person复合某一项就成立
+        // if(person < 25){
+        //     console.log('年龄够')
+        // }else if(person == '性格好'){
+        //     console.log('性格好')
+        // }else if(person == '性别女'){
+        //     console.log('性别女');
+        // }else if(person == '美'){
+        //     console.log('美');
+        // }else{
+        //     console.log('再见');
+        // }
+    }
+    
+
+
+</script>
+</body>
+</html>

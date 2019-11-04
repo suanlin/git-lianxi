@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+
+    */
+
+    // function push(ary,...arg){
+    //     let narr = [...ary,...arg];
+    //     for(let i=0;i<narr.length;i++){
+    //         ary[i] = narr[i];
+    //     }
+    //     return narr.length;
+    // }
+    // function pop(ary){
+    //     let last = ary[ary.length-1];
+    //     ary.length --;
+    //     return last;
+    // }
+    // function shift(ary){
+    //     let first = ary[0];
+    //     ary.reverse();
+    //     ary.length --
+    //     ary.reverse();
+    //     return first;
+    // }
+    // function unshift(ary,...arg){
+    //     ary.reverse()
+    //     arg.reverse()
+    //     let ary2 = ary.concat(arg);
+    //     ary2.reverse();
+    //     for(let i=0;i<ary2.length;i++){
+    //         ary[i] = ary2[i];
+    //     }
+    //     return ary2.length
+    // }
+
+    //[1,2]
+    function splice(ary,...arg){
+        //[0,1]
+        let ary2 = [];
+        if(arg.length === 2){
+           for(let i=0;i<ary.length;i++){
+                // debugger
+                if(i >= arg[0] && arg[1] != 0){
+                    if(ary2.length == arg[1]){
+                        // for(let i=0;i<ary.length;i++){
+                        //     for(let j=0;j<ary2.length;j++){
+                        //         if(ary[i] === ary2[j]){
+                        //             ary[i] = null;
+                        //         }
+                        //     }
+                        // }
+                        // let ary3 = [];
+                        // for(let i=0;i<ary.length;i++){
+                        //     if(ary[i] != null){
+                        //         ary3.push(ary[i]);
+                        //     }
+                        // }
+                        // ary.length = 0;
+                        // for(let i=0;i<ary3.length;i++){
+                        //     ary[i] = ary3[i];
+                        // }
+                        // for(let i=0;i<ary.length;i++){
+                        //     for(let j=0;j<ary2.length;j++){
+                        //         if(ary[i] === ary2[j]){
+                        //            let a = ary[i];
+                        //            let b = ary[ary.length-1];
+                        //            ary[i] = b;
+                        //            ary[ary.length-1] = a;
+                        //            ary.length --;
+                        //         }
+                        //     }
+                        // }
+
+                        return ary2;
+                    }
+                    ary2.push(ary[i]);
+                }else{
+                    if(arg[1] === 0){
+                        return ary2;
+                    }
+                }
+           }
+        }
+
+        // [2,2] [1,2,2,2]  
+
+        // [1,4]
+
+
+
+
+        
+
+    
+
+    }
+
+
+    // [1,2,3,3]  
+    function splice2(ary,...arg){
+        //[0,1]
+        let ary2 = [];
+        if(arg.length === 2){
+            // debugger
+            for(let i=arg[0];i<arg[0]+arg[1];i++){
+                    // console.log(ary[i])
+                    ary2.push(ary[i]);
+                    ary[i] = '填充';
+            }
+            let ary3 = [];
+            for(let i=0;i<ary.length;i++){
+                if(ary[i]!=='填充'){
+                    ary3.push(ary[i])
+                }
+            }
+            ary.length = 0;
+            for(let i=0;i<ary3.length;i++){
+                ary[i] = ary3[i];
+            }
+
+           console.log(ary);
+        }
+    }      
+
+    
+    let ary = [1,2,3,4,5];
+
+
+    splice2(ary,2,2)
+
+    // ary.forEach((item,i)=>{
+    //     if(i===2){
+    //         return;
+    //     }
+    //     alert(item)
+    // });
+
+
+    // ary.forEach((item,i)=>{
+    //     ary.forEach((item2,j,all)=>{
+    //         if(item === ary[j+1]){
+    //             ary.splice(i,1);
+    //         }
+    //     });
+    // });
+
+    
+
+
+
+    // console.log(unshift(ary,1,2))
+
+    
+    // console.log(splice(ary,2,2));
+    console.log(ary);
+    // console.log(push(ary,5,6));
+
+
+</script>
+</body>
+</html>

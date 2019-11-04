@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt">
+    <button id="a">请发送</button>
+    <ul id="l"></ul>
+<script>
+    
+
+    a.onclick = function(){
+        let val = txt.value;
+        // l.innerHTML = l.innerHTML + '<li>'+val+'</li>';
+        l.innerHTML += '<li>'+val+'</li>';
+        //清空val清空这个变量，清空txt.value是清空文本框的值.
+        txt.value = '';
+    }
+
+
+
+</script>
+</body>
+</html>

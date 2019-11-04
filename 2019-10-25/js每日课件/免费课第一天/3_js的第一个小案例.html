@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height:50px;
+    background: red;
+    display: none;
+}
+</style>
+</head>
+<body>
+    <button id="btn">显示</button>
+    <div id="box">31232312</div>
+<script>
+    document.getElementById('btn').onclick = function(){
+        //把右边的代码赋值给左边
+        /*
+            正常的思维:
+                把box的样式中的display属性改为block
+
+            程序的思维:
+                把block赋值给box的样式中的display属性
+
+
+            在设置复合样式的时候，去掉-线，首字母大写
+                比如:
+                    font-size:50px
+
+                    fontSize = '50px';
+        */
+        document.getElementById('box').style.display = 'block';
+
+        document.getElementById('box').style.height = '300px';
+
+        document.getElementById('box').style.fontSize = '50px';
+        document.getElementById('box').style.color = '#fff';
+        document.getElementById('box').style.backgroundColor = 'green';
+
+    }
+</script>
+</body>
+</html>

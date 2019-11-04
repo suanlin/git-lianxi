@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">0</button>
+    <button id="btn2">0</button>
+    <button id="btn3">0</button>
+    <!-- <button>2</button> -->
+<script>
+    /*
+        自定义属性:
+            给引用类型添加一个自定义的key.
+
+        变量:
+            let a = 10; 当前这个a是一个变量
+
+        属性:
+            obj.a = 10   当前这个a是obj的一个属性(前面有主的就是属性)
+    */
+     let num = 1;
+     btn.onclick = function (){
+       
+         if(num < 5){
+            //  num ++;
+            //  num=1
+            var j =1;
+            num = j + 1
+            
+             console.log(num++)
+
+             
+             
+            //  console.log(num)
+             btn.innerHTML = num;
+         }else{
+             btn.innerHTML = 0;
+         }
+    }
+    
+
+    // let num2 = 0;
+    // btn2.onclick = function(){
+    //     if(num2 < 2){
+    //         num2 ++;
+    //         btn2.innerHTML = num2;
+    //     }else{
+    //         btn2.disabled = true;
+    //     }
+    // }
+
+
+    // let num3 = 0;
+    // btn3.onclick = function(){
+    //     if(num3 < 2){
+    //         num3 ++;
+    //         btn3.innerHTML = num3;
+    //     }else{
+    //         btn3.disabled = true;
+    //     }
+    // }
+
+//      const btns = document.querySelectorAll('button');
+//      const btnss = document.querySelectorAll('button')[0]
+//     console.log(btnss)
+//      /*
+//         this 这个
+//          在点击的时候，点谁，this就是被点击的那个元素
+//     */
+//  btnss.onclick = function fn(){
+
+//     btnss.kkk = ;
+//     if(this.kkk < 1){
+//                 this.kkk ++;
+//                 this.innerHTML = this.kkk;  
+//             }else{
+                
+//                 this.innerHTML = 0; 
+//             }
+
+//  }
+
+
+
+
+
+    // for(var i=0;i<btns.length;i++){
+    //     // console.log(i);
+    //     //每个按钮都添加一个num的自定义属性，值为0
+    //     btns[i].kkk = 0;
+    //     // console.dir(btns[0])
+    //     btns[i].onclick = function(){
+    //         // alert(btns[0].num);
+    //         // console.log(this.num);
+    //             // this.kkk=0;
+    //         if(this.kkk < 7){
+    //             this.kkk ++;
+    //             this.innerHTML = this.kkk;  
+    //         }else{
+                
+    //             this.innerHTML = this.kkk; 
+    //         }
+
+    //     }
+    // }
+
+</script>
+</body>
+</html>

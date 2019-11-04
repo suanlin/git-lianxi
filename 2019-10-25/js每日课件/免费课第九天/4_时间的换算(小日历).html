@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="month">9</div>
+    <div id="box"></div>
+    <button id="btn1">下一个月</button>
+    <button id="btn2">上一个月</button>
+<script>
+    /*
+        倒计时:
+            未来的时间 - 现在多少时间 = 剩下多少时间 
+    */
+
+    let d = new Date();
+
+    // console.log(d.getFullYear() + '年' + (d.getMonth()+1) + '月' + d.getDate() + '日' + d.getHours() +'时' + d.getMinutes() + '分' + d.getSeconds() + '秒')
+
+    //使用字符串的方式设置时间
+    // let time = new Date('2019 9 6 12:00:00'); //括号中可以传参
+
+    //用数字的方式去设置时间（注意:月份要在当前基础上 -1）
+    // let time = new Date(2019,8,6,12,00,00);
+
+    // d.setFullYear(2020);
+
+    // d.setDate(0);//如果使用setDate去设置时间，参数为0，那么**自动**会去上个月的最后一天
+    // d.setDate(31);//如果使用setDate去设置时间，参数为当前月份最后一天+1，那么**自动**会去下个月的第一天
+
+
+    // d.setMonth(d.getMonth() + 1); //10月
+    // d.setDate(0);
+    // let num = d.getDate();
+    
+    // let html = '';
+    // for(let i=0;i<num;i++){
+    //     html += `<span>${i+1}</span>`;
+    // }
+
+    // box.innerHTML = html;
+
+    let n = 1;
+    fn();
+    btn1.onclick = function(){
+        fn();
+    }
+
+    btn2.onclick = function(){
+        fn2();
+    }
+
+    function fn(){
+        let d = new Date();
+
+        d.setMonth(d.getMonth() + n); //设置为下个月
+
+        //当前月
+        month.innerHTML = d.getMonth(); //8 + 1
+       
+        d.setDate(0); //下个月的0就是这个月的最后一天
+
+        let num = d.getDate(); //获取这个月的最后一天
+        
+        let html = '';
+        for(let i=0;i<num;i++){ //有多少天就循环多少次，生成日期
+            html += `<span>${i+1}</span>`;
+        }
+
+        box.innerHTML = html;
+        n++; //每点一次就加一个月
+    }
+
+
+    function fn2(){
+        let d = new Date(); 
+        //当前月
+        month.innerHTML = d.getMonth() + n; //8 + 1
+
+        d.setMonth(d.getMonth() + n); //10月
+       
+        d.setDate(0);
+        let num = d.getDate();
+        
+        let html = '';
+        for(let i=0;i<num;i++){
+            html += `<span>${i+1}</span>`;
+        }
+
+        box.innerHTML = html;
+        n--;
+    }
+   
+
+
+
+
+
+
+    // console.log();
+</script>
+</body>
+</html>

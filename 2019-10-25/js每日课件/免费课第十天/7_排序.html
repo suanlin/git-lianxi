@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        排序：
+            sort 排序
+
+            冒泡排序:
+                [1,2,3,4,6,8,9]
+
+            快速排序:
+                [3,6,2,4,9,8];
+
+                [3,2,4]   5   [6,9,8]
+
+            [2,4]                   [9,8]
+                                    [] 6 [9,8] ->[8] 9 
+            [2]  3  [4]
+     */
+
+    let ary = [1,3,6,10,5,2,4,9,8,6];
+    /*
+        [1,2,6,3,4,9,8];
+    */
+
+    function fn(ary){
+        if(ary.length == 0 || ary.length == 1)return ary;
+        let ary1 = ary.shift(); //从数组中获取一个数字
+        let l = []; //创建左边的数组
+        let r = [];//创建右边的数组
+        //ary有成员的时候就循环
+        while(ary.length){
+            let ary2 = ary.shift(); //再从数组中取一个数字
+            //取出来值和刚才的值进行对比
+            if(ary1 < ary2){
+                //刚才取出来的值小于当前取出来的值，就往右边放
+                r.push(ary2);
+            }else{
+                //刚才取出来的值大于等于当前取出来的值，就往左边边放
+                l.push(ary2);
+            }
+        }
+        /*
+            [1,2,4];
+            3 < 1
+            [1,3,2]  3 [4]
+        */
+        //用左边的链接中间的再链接右边的
+        return fn(l).concat(ary1,fn(r));
+    }
+
+    console.log(fn(ary));
+
+
+    // for(let i=0;i<ary.length;i++){
+    //     for(let j=i+1;j<ary.length;j++){
+    //         if(ary[i] > ary[j]){
+    //             let a = ary[i];
+    //             ary[i] = ary[j];
+    //             ary[j] = a;
+    //         }
+    //     }
+    // }
+    // console.log(ary);
+
+
+</script>
+</body>
+</html>

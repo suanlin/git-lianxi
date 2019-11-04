@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul">
+        <li><a href="#" id="a">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+    </ul>
+<script>
+    
+        
+        //parentNode  查找某个元素的父级节点
+   let zz = document.querySelectorAll('#ul li');//获取ul下的所有li
+     zz.forEach(item => {
+         item.onclick= function(){
+             item.style.display = 'none';//点谁让谁消失
+         }
+     });
+    console.log(a.parentNode);//li
+    
+    console.log(a.parentNode.parentNode);//ul
+    console.log(a.parentNode.parentNode.parentNode);//body
+    console.log(a.parentNode.parentNode.parentNode.parentNode);//html
+    console.log(a.parentNode.parentNode.parentNode.parentNode.parentNode);//#document
+    console.log(a.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);//none
+   
+
+</script>
+</body>
+</html>

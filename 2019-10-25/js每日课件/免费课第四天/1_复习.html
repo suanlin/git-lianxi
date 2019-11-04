@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+<script>
+    /*
+        JS的数据类型有哪些?
+            数字、字符串、null、未定义、布尔值、对象
+
+        typeof 干嘛的？
+            检验数据类型的.
+
+        
+        for循环它有几步，各是什么？
+
+            1.初始化变量
+            2.执行条件,不成立就不进循环体
+            3.成立进循环体
+            4.自增或者自减
+
+        1X1  1X2
+        2X1  2X2
+
+    */
+
+    // console.log(typeof {});// object
+
+    /*
+        html = ''
+
+        html = '<span>1</span>'
+
+        html = html + '<span>2</span>'
+
+        html += '<span>2</span>'
+
+
+        html = '<span>1</span><span>2</span>'
+
+    */
+
+
+    let html = '';
+    for(var i=1;i<=9;i++){
+        // console.log(i);
+        for(var j=1;j<=9;j++){
+            //赋值的时候下一次会把上一次的覆盖
+            // html = html + `<span style="border:1px solid #000">${i} * ${j} = ${i * j }</span> &nbsp;&nbsp;`
+            html += `<span style="border:1px solid #000">${i} * ${j} = ${i * j }</span> &nbsp;&nbsp;`
+            // console.log(`${i} * ${j} = ${i * j }`);
+        }
+        html += '<br/>'
+    }
+
+    box.innerHTML = html;
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

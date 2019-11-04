@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+!(!"Number(undefined)");
+​
+isNaN(parseInt(new Date())) + Number([1]) + !undefined;
+​
+Boolean(Number("")) + !isNaN(Number(null)) + Boolean("parseInt([])") + !!null;
+​
+parseFloat("1.6px") + parseInt("1.2px") +  parseInt(null);
+​
+isNaN(Number(!!Number(parseInt("0.8"))));//
+​
+console.log(1 + "2" + "2");//
+​
+parseFloat("0");
+​
+Number("");
+​
+ "parseInt(null)" + 12 + !!Number(NaN);
+​
+! (isNaN("")) + parseInt(NaN);
+​
+!parseInt(null) + !isNaN(null);
+
+! false == !! true
+
+parseInt('35.4.2') === parseFloat('35.A.2')
+
+!Number(undefined) == isNaN( Boolean('') )
+
+[] == []
+'' == 0
+[0] == false//
+true == 1
+{} == []
+'12' > 2
+12’ > '2'
+[] == 0
+0 == null//
+'{}' == 1
+undefined == null
+null == undefined 
+{name:1} == {name:1}
+undefined == 0
+
+
+
+var a = 'abc' + 123 + 456;
+      var b = '456' - '123';
+      var c = 100 + true + 21.2 + null + undefined + "Tencent" + [] + null + 9 + false;
+      let d = [] + [];
+      let e = [] + {};
+      let f = 1 + true + null + [3.1415926] + '小花' + [] + null + undefined;
+      let g = 3 - '1px';
+     console.log(a,b,c,d,e,f,g);
+'abc123456'
+'NaNTencentnull9false'
+0
+'[objcet objcet]'
+'13.1415926小花nullundefined'
+NaN
+2、Number('')//0
+     Number('-1')//-1
+     Number(23.2.2)
+     Number(null)// 0 
+     Number('12px')//NaN
+     !parseInt('')// true  空字符串就是NaN 然后在取反
+     !!parseInt('12.5px')
+     parseFloat('12.5px')//12.5
+     isNaN('')//false
+     isNaN('12px')//true
+     isNaN(NaN)// true
+
+3、let a = 12;
+      let b = a
+      console.log(b)// 12
+</script>

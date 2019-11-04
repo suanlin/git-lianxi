@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>    
+<script>
+    /*
+        创建元素:
+            ele.innerHTML = '<div></div>';  字符串
+            document.createElement(标签名)  节点
+
+        parent.appendChild(children)
+
+        appendChild：
+            往指定元素的末位添加元素
+    */
+    let div = document.createElement('div');
+    div.innerHTML = '珠峰';
+    div.onclick = function(){
+        alert(1);
+    }
+
+    box.appendChild(div);
+    console.log(div);
+</script>
+</body>
+</html>

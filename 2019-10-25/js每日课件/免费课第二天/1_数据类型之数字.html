@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //Number
+    /*
+        在数字类型中，有一个数字类型叫NaN，它是一个非法的数学运算
+        Infinity 正无穷大也是数字类型的
+        运算符:
+            + - * / %取余
+
+        在纯数字运算的时候，跟我们生活中的计算方式一致,
+
+        隐式类型转换:
+            自己没有去做，系统偷偷帮你做了
+
+            ''+ 12 = '12'
+
+        强制类型转换:
+            系统没做，我们人为主动转换数据类型
+
+        + 
+            数字和字符串相加的时候结果为字符串，是一个字符串的拼接
+
+            任意的数据加上字符串都会传成字符串。
+
+            如果字符串前面只有一个 + 号，那么结果会隐式转换为数字类型
+
+        -  
+            数据在进行减法运算的时候，结果默认会转成数字类型
+
+        * /
+
+        取余 % :
+            12%2  0
+            11%2  1 
+            3%2   1
+
+            A > B  正常取余
+            A < B  直接取A
+ 
+        12 + '2' = '122'
+
+
+        parseInt(字符串,多少进制);
+        把一个字符串类型转成数字类型并且取整。
+        如果传入了第二个参数，那么就是来描述第一个参数的进制数，最后会转为十进制
+
+        如果转换不出来，结果为NaN
+
+        parseInt中如果使用Infinity，那么结果为NaN
+
+        110  10
+
+        011 -> 10  0X2^0 + 1X2^1 + 1X2^2 = 6
+
+        parseFloat(字符串)
+            把一个字符串类型转成数字类型保留小数部分。
+
+        Number可以转换数字
+            空字符串使用Number转换为 0
+            空字符串使用parseInt转换为 NaN
+
+            console.log(Number([]));  // 0
+            console.log(parseInt([])); // NaN
+
+
+        toFixed保留数字中指定的小数
+            注意:在转换的时候会以计算指定位数+1的方式四舍五入计算，并且转成字符串
+
+    */
+
+
+
+
+    // let num = 12;
+
+    // console.log(num + '12px'); //'1212px'
+
+    // console.log(parseInt('110px',2));
+    // console.log(parseInt('px'));
+    // console.log(parseInt('Infinity'));
+    // console.log(parseInt([]));
+
+    // console.log(parseFloat('10.5px'));
+
+    // console.log(Number('12') + 12); //24
+    // console.log('12'*1 + 12);
+    // console.log(Number('') == parseInt(''))
+
+    // console.log(Number([]));
+
+
+    let num = 12.56421;
+
+    console.log(num.toFixed(2))
+
+
+
+
+
+    // console.log(12 % 5); //2
+    // console.log(5 % 12);
+    // console.log(6 % 12);
+    // console.log(8 % 12);
+    // console.log(11 % 12);
+
+    // console.log(32321 % 743657843);
+
+
+    // console.log(num - 'px');
+    // console.log(num * '2'); //24
+    // console.log(num / '2');
+
+    // console.log(typeof (+'12'))
+    // console.log(num + '2');
+</script>
+</body>
+</html>

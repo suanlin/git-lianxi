@@ -1,0 +1,40 @@
+
+一、简答题
+	1、typeof、instanceof、constructor、Object.prototype.toString.call()
+	2、null、undefined、0、NaN、"" 转布尔是false，其他是true
+	3、（1）声明一个变量不赋值，获取这个变量是undefined
+	      （2）获取对象中属性名对应的属性值获取不到是undefined
+	      （3） 函数中没有给形参赋值，在函数中获取形参变量就是undefined
+	      （4） 函数中没有返回值（return），那函数执行结果返回的就是undefined
+	4、基本数据类型：number、string、boolean、null、undefined
+	      引用数据类型：对象：普通对象（{}）、数组（[]）、Math、Date、正则 ；   还有函数
+		
+
+二、         1、false
+	2、false
+	3、false
+	4、false
+	5、false
+	6、false
+	7、false
+	8、true
+	9、true
+	10、false
+三、
+	1、NaN
+	2、'1Number("13.5px")nullundefined'
+	3、NaN
+	4、2
+	5、'string'
+	6、false
+
+四、
+	1、14
+	2、'了却'，'红尘'
+	3、fasle   true   6
+
+五、
+	1、获取三个按钮（li）和单个卡片（div）的元素集合
+	2、循环给每一个按钮（li）增加一个属性，属性值是相应的索引，给每一个按钮（li）增加点击事件
+	3、当用户点击事件的时候把每一个按钮（li）和卡片（div）的class名清空，然后把点击的按钮和相应的卡片增加class名
+

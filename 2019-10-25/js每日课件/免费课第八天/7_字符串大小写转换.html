@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        toLowerCase 小写
+
+        toUpperCase 大写
+
+        font-size
+        -webkit-tran
+    */
+    // let str = 'dhsajdhskdas';
+    let str = 'SDHSDAKL';
+
+    // console.log(str.toLowerCase());
+
+    // console.log(str.toUpperCase())
+
+    // let str2 = 'font-size';//['font','size']
+    let str2 = 'background-blend-mode-dsds-hahs-djsak:';
+    let arr = str2.split('-');
+    let temp = arr[0];//background
+    for(let i=1;i<arr.length;i++){
+        temp += arr[i][0].toUpperCase() +  arr[i].substr(1)
+    }
+    console.log(temp);
+    // console.log(arr[0] + arr[1][0].toUpperCase()+arr[1].substr(1));
+
+
+</script>
+</body>
+</html>

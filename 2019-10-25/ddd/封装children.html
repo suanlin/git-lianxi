@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+        <ul id="ul">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        
+    </ul>
+<script>
+    /*
+        childNodes 获取某个元素下的所有子节点
+        children 获取某个元素下的所有子元素节点
+        需求:
+        写一个方法，这个方法返回某个元素下的所有元素子节点
+        1.通过childNodes去拿到所有的子节点
+        2.通过判断，这些子节点下哪个是元素子节点
+        3.如果是就把这个元素子节点push到一个数组中
+        4.最后把这个数组返回出去
+    */
+
+    function children(parent){
+    /*  判断所传参类型.
+        如果是字符串就获取元素
+        如果直接是元素就不用改变.
+        if(typeof parent === 'string'){
+            parent = document.querySelector(parent);
+        }else if(parent.nodeType === 1){
+            parent = parent;
+        }
+   */
+       // 还写为三元运算符
+        parent = typeof parent === 'string'?document.querySelector(parent):(parent.nodeType === 1?parent:null)         
+        //如果为null，返回请正确传参
+        if(parent === null){
+            return '请正确传参'
+            }
+        const chidrens = parent.childNodes;
+        let arr = [];
+        for(let i=0;i<chidrens.length;i++){
+            if(chidrens[i].nodeType === 1){
+                arr.push(chidrens[i]);
+            }
+        }   
+        return arr;
+    }
+    console.log(children('ul'));
+</script>
+</body>
+</html>

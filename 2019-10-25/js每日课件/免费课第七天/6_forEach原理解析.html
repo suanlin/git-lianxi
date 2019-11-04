@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>  
+    let a;
+    let ary = ['1',6,true,null,a];
+
+    function forEach(ary,callbcak){
+        for(let i=0;i<ary.length;i++){
+            callbcak(ary[i],i,ary);
+        }
+    }
+
+
+    let f = forEach(ary,(item,index)=>{
+        console.log(index);
+    });
+
+
+    // let f = forEach(ary,function(item,index){
+    //     console.log(index);
+    // });
+    // console.log(f);
+
+    // let f1 = ary.forEach(fn);
+    // console.log(f1);
+
+    // function fn(item,index,all){
+    //     console.log(item,index,all);
+    // }
+   
+    
+</script>
+</body>
+</html>

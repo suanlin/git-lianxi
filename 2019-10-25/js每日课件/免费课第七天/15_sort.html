@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        sort(callback)
+            callback(a,b) 必须返回一个数字
+
+            正数就交换位置
+            负数就不交互位置
+            0无所谓交不交换位置了
+
+        默认排序是通过字符串编码来排列的
+
+        允许自定义:
+            传入回调函数
+
+        
+        从小到大排列，a-b
+        从大到小排列，b-a
+
+    */
+    let ary = [6,3,7,'9px',2,'4em','10rem'];
+   
+
+    
+    // ary.sort(function(a,b){
+    //     return a-b;
+    // });
+
+
+    //从大到小排列，b-a
+    ary.sort(function(a,b){
+        return parseInt(b) - parseInt(a); //为了返回有效数字才用parseInt
+    });
+
+    console.log(ary);
+
+    
+</script>
+</body>
+</html>

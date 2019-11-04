@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+      /*
+        下一个兄弟元素节点
+            nextElementSibling
+
+        上一个兄弟元素节点
+            previousElementSibling
+    */
+console.log(ul.firstElementChild.nextElementSibling);// 输出第一个子元素节点的下一个元素节点
+console.log(ul.lastElementChild.previousElementSibling); // 输出最后一个子元素节点的上一个元素节点
+console.log(ul.lastElementChild.nextElementSibling); // 输出最后一个子元素节点的下一个元素节点  因为最后一个子元素节点的下一个元素节点不存在（即获取不到），输出为null  获取不到元素节点输出为null
+    </script>
+</body>
+</html>

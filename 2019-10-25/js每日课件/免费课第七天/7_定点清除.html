@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+.active{
+    background:pink;
+}
+</style>
+</head>
+<body>
+    <button class="active">按钮一</button>
+    <button>按钮二</button>
+    <button>按钮三</button>
+    
+<script>
+
+    // ;(function(gobal,facty){
+    //     facty(gobal);
+    // })(typeof window !== 'undefined'?window:this,function(gobal,Nogobal){
+    //     var btns = document.getElementsByTagName('button');
+    //     var slice = Array.prototype.slice;
+    //     btns = slice.call(btns);
+    //     btns.forEach(function(ele,i){
+    //         ele.onclick = function(){
+    //             alert(i);
+    //         }
+    //     });
+    // });
+
+    const btns = document.querySelectorAll('button');
+    let btn = btns[0];//prev;
+    btns.forEach((ele,index)=>{
+        ele.onclick = function(){
+            //把刚才的class清除
+            //把当前的class加上
+            btn.className = '';
+            this.className = 'active';
+
+            /*
+                当点击完，把当前点击的按钮赋值给btn，做为下一次的上一次清空class的对象
+            */
+            btn = this;
+        }
+    });
+
+    // console.dir(btns)
+
+    // let prev = 10; //btn[0]  btn[0].index = 0
+
+    // let last = 20;//this  btn[1]  btn[1].index = 1
+
+    // // console.log(prev,last);
+
+    // prev = last; //btn = btn[1]
+
+    // console.log(prev);//20
+
+
+    
+    
+</script>
+</body>
+</html>

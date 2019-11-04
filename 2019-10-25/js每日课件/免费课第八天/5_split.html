@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        
+        split('')
+            把字符串分割为数组，分隔符为参数,如果要把字符串每个字符串分割后放到数组中，要用''做为参数
+
+            只有空字符串切空字符串返回值才会空数组,用整个字符串去分割，最后会变为["",""]
+
+
+        一般split和join会一起用
+    */    
+    // let str = '珠;峰;培;训';
+    // let str = '珠';//['','']
+    // console.log(str.split(''));
+    // console.log(str.split(';'));
+    // console.log(str.split('珠'));// ['','']
+
+    let str2 = '训培峰珠';
+
+    console.log(str2.split('').reverse().join(''));
+
+    //一个价格需要保留2为小数？  
+
+    // let num = 10.99999;
+    // let str3 = (num+'');
+    // console.log(str3.substring(0,str3.indexOf('.')+3)*1);
+
+
+
+
+</script>
+</body>
+</html>

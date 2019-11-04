@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮一</button>
+    <button>按钮二</button>
+    <button>按钮三</button>
+    <div id="box">对应按钮一</div>
+<script>
+    let ary = ['对应按钮一','对应按钮二','对应按钮三'];
+    /*
+        1.先获取所有的btn
+        2.给所有的btn添加点击事件函数
+        3.点第一个要对应数组的第一项，别个就以此类推
+    */
+   let btns = document.querySelectorAll('button');
+
+//    btns.onclick  是不可以的
+
+    /*
+        for循环是非常快的，在你点击的时候，循环已经结束
+
+        在点击的时候去弹i，i是为循环完之后的结果
+    */
+   //主线程
+    // for(var i=0,len=btns.length;i<len;i++){
+    //     console.log(i);//0,1,2
+
+    //     // btns[0].index = 0
+    //     // btns[1].index = 1
+    //     // btns[2].index = 2
+    //     btns[i].index = i;
+    //     //异步队列
+    //     btns[i].onclick = function(){
+    //         // var i = 10;
+    //         alert(this.index);
+    //     }
+    // }
+    // console.log(i);//3
+
+    var i = 0 , len = btns.length;
+    //主线程
+    for(;i < len; i++){
+        //异步队列
+        // console.log(i);
+        btns[i].index = i;
+        btns[i].onclick = function(){
+            // alert(ary[this.index]);
+            // console.dir();
+            box.innerHTML = ary[this.index];
+        }
+    }
+    console.log(i);//3
+
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        concat：
+            链接一个或者多个数组，如果没有传入参数那么等同于拷贝一份原数组
+
+            返回值为一个新数组
+    */    
+    let ary = [1,2];
+    let ary2 = [3,4];
+
+    let ary3 = ary.concat(); //数组浅拷贝的方式
+
+    console.log(ary.concat(ary2,[5,6]));
+
+    console.log(ary == ary3);
+    
+
+</script>
+</body>
+</html>

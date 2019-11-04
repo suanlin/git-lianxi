@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        url：
+            https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=小花猫&rsv_pq=fcfe0249001867af&rsv_t=1d7bfbczGll3D3gO9YF2sLoWGvaeYRbd99Um03Q35AlV5UbYJ1r1JYaXCDk&rqlang=cn&rsv_enter=1&rsv_dl=ib&rsv_sug3=10&rsv_sug1=8&rsv_sug7=100
+    
+        一个url一般由
+            协议 : https
+            域名 : baidu（是ip的别名）
+            端口 : 提供不同服务的"门牌地址"
+            查询信息 : 问号到井号之间的字符 
+                ?key=val&key2=val2&key3=val3#hash=1
+            hash信息：
+                #号到#号之后的字符
+    */
+
+    /*
+        https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=小花猫&rsv_pq=fcfe0249001867af&rsv_t=1d7bfbczGll3D3gO9YF2sLoWGvaeYRbd99Um03Q35AlV5UbYJ1r1JYaXCDk&rqlang=cn&rsv_enter=1&rsv_dl=ib&rsv_sug3=10&rsv_sug1=8&rsv_sug7=100
+    
+        {
+            ie:'utf-8',
+            f:8,
+            rsv_bp:1,
+            rsv_idx:1
+        }
+    */
+    let str = 'https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=小花猫&rsv_pq=fcfe0249001867af&rsv_t=1d7bfbczGll3D3gO9YF2sLoWGvaeYRbd99Um03Q35AlV5UbYJ1r1JYaXCDk&rqlang=cn&rsv_enter=1&rsv_dl=ib&rsv_sug3=10&rsv_sug1=8&rsv_sug7=100#hash=001';
+    
+    /*
+        先找?号的位置，从?号开始截取到字符串最后
+
+        然后找#号，截取到#号的字符
+
+    */
+
+    // console.log( str.substring(str.indexOf('?')+1,str.indexOf('#')) );
+
+    // console.log(str.split('?')[1])
+
+    // console.log(str.split('?')[1].split('#')[0]);
+
+
+    str = str.substring(str.indexOf('?')+1,str.indexOf('#'));
+
+    // console.log(str.split('&'));//ie=utf-8   {ie:utf-8}
+
+    /*
+        ["ie=utf-8", "f=8", "rsv_bp=1", "rsv_idx=1", "tn=baidu", "wd=小花猫", "rsv_pq=fcfe0249001867af", "rsv_t=1d7bfbczGll3D3gO9YF2sLoWGvaeYRbd99Um03Q35AlV5UbYJ1r1JYaXCDk", "rqlang=cn", "rsv_enter=1", "rsv_dl=ib", "rsv_sug3=10", "rsv_sug1=8", "rsv_sug7=100"]
+    
+        ["ie","utf-8"]
+    */
+
+    let obj = {};
+
+    // obj[arr[0]] = arr[1]
+
+    let ary = str.split('&');
+
+    ary.forEach(item=>{
+        let arr = item.split('=');
+        obj[arr[0]] = arr[1];
+        // console.log(arr[0])
+    });
+
+    console.log(obj)
+    
+
+</script>
+</body>
+</html>

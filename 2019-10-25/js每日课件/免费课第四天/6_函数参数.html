@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        参数:
+            在函数**定义**的时候可以在括号中写一些"变量"，
+            一个“变量”与另一个“变量”用逗号分隔
+
+            在函数定义时的参数叫形参(形式上的参数)
+
+
+            在函数调用的时候，可以在括号中填入所有的数据
+            一个类型与另一个类型用逗号分隔，数据的顺序和形参是一一对应的
+            
+            传入的实参类似于给"变量"赋值
+
+            function fn(a){
+                console.log(a);
+            }
+            fn(1);
+
+
+            在调用时传入的数据，我们叫实参（实际参数）
+
+            形参和实参是一一对应的关系。
+
+        注意:
+            如果有了形参，没有实参，输出形参的时候为undefined
+
+        按经验讲，一个班会有30%的同学，最后参数还传不明白，遇见传参就怂了
+
+        如何才能变为那会的70%?多想多练勇敢点、勤奋点。
+
+    */
+
+    // function fn(a,b,c){
+    //     console.log(a,b,c);//1,true,undefined
+    // }
+
+    // fn(1,function(){})
+    // fn({},[1,2,3,4])
+    // fn(true,null);
+    // fn(1,true);
+
+
+    // function fn(a){
+    //     a(function(nn){
+    //         // console.log(nn)
+    //         nn(77);
+    //     });
+    // }
+    // fn(function(num){
+    //     // console.log(num);//函数
+    //     num(function(n2){
+    //         console.log(n2);
+    //     });
+    // });
+
+
+    // function fn(obj){
+    //     obj.callback();//回调函数，钩子函数，生命周期函数
+    // }
+
+    // fn({
+    //     callback:function(){
+    //         alert(1);
+    //     }
+    // });
+
+    
+    //ES6中，函数的参数是可以被赋值为一个默认值的
+    // function fn(a,b=5){
+    //     console.log(b);//默认5
+    // }
+    // fn(1);
+
+    /*
+        函数的剩余运算符
+            ...自定义的名字
+
+        以下arg代表的是第一个参数之后的所有参数，这个arg为数组
+    */
+    // function fn(a,...arg){
+    //     console.log(a,arg);
+    // }
+    // fn(1,2,3,4,5,6);
+
+    //以下arg代表的是所有参数，这个arg为数组
+    // function fn(...arg){
+    //     console.log(arg);
+    // }
+    // fn(1,2,3,4,5,6);
+
+
+    
+    let a = 10;
+    function fn(a){
+        a(function(b){
+            console.log(b);
+        });
+    }
+
+    function fn2(a){
+        a(a);
+    }
+    fn(fn2);
+
+
+</script>
+</body>
+</html>

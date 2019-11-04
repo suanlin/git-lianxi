@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" id="zz">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+ <div id="box" class="active" zf-haha="arr">
+                <!--注释-->
+               ahhahahahahaha 
+                <!--注释-->
+                <ul>
+                    <li>haha</li>
+                </ul>
+            </div>
+    <script>
+   /*  console.log(zz.nodeType);//1 元素节点
+    box.childNodes[1].nodeValue = '哈哈';
+    console.log( box.childNodes[1].nodeValue);//哈哈
+    console.log(box.nodeName);//DIv
+    console.log(box.attributes[1].nodeName);//class
+    console.log(box.attributes[2].nodeName);//zf-haha
+    console.dir(box.attributes[1]);//class
+     */
+    
+    
+     let a = {
+        arr:[1,2,3],
+        ary:[3,2,1]
+    }
+
+    let attrs = box.attributes;
+   console.log(attrs);//
+    for(let i=0;i<attrs.length;i++){
+        if(attrs[i].nodeName === 'zf-haha'){
+            console.log(a[attrs[i].nodeValue]);//[1,2,3]
+        }
+    }
+
+    console.log(box.attributes)
+
+    
+    </script>
+</body>
+</html>

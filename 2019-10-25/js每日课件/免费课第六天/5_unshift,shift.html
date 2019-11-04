@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        pop 
+
+        push 往数组的后面添加一个或者多个数据  返回值的结果是新数组的长度
+
+        unshift 往数组前面添加一个或者多个数据，返回值为新数组的长度
+
+        shift删除数组的第一个数据，返回值为删除那个数据。
+
+        every 查看数组的每个数据是否都匹配指定条件  如果都符合就返回true  只要一个不符合就返回false
+    */
+
+    let ary = [1,2];
+
+    // console.log(ary.unshift(-1,0));
+
+    // console.log(ary.shift());
+
+    // console.log(ary);
+
+
+    /*
+        [1,2]
+
+        [2]  返回值为1
+
+        [2,4,5,6,1]  5
+    */
+
+    console.log( ary.push(4,5,6,ary.shift(4,5)) ); //45645,24561   45656,126,124  
+    
+    console.log(ary);//改变之后的新数组
+
+
+
+
+</script>
+</body>
+</html>

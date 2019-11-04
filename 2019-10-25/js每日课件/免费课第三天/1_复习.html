@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // console.log(parseInt('12px12'));
+
+    /*
+        null被Number转换为0
+        undefined被Number转换为NaN
+        {}被Number转换为NaN
+
+    */
+    // console.log(Number(1));
+
+    //显示什么？转成什么类型的？大写还是小写？
+    // console.log(typeof '哈哈');
+
+    let txt = '的前端内容';
+    let str = '珠峰培训'+ txt +'很丰富';
+    // let str = `珠峰培训${txt}很丰富`;
+
+    // console.log(str);
+
+    // console.log(''+[1,2,3,4,5]); //1,2,3,4,5
+    // console.log([1,2,3,4,5].toString()); 
+    // console.log((true).toString()); 
+    // console.log((1).toString());
+    // console.log(({}).toString()); //'{}'  对象转成字符串一定是[object Object] 
+
+    
+
+    // let obj = {
+    //     sex:'人妖'
+    // }
+
+    // let obj2 = obj;
+
+    // obj2.sex = '男女';
+
+
+    let ary = [1,2,3,[5]];
+
+    let ary2 = ary;
+
+    ary2[1] = 100;
+
+    ary2 = [5,6];
+
+    ary[3] = 10;
+
+    console.log(ary2[2]);
+    console.log(ary[1]);
+
+
+    // console.log(obj.sex);
+
+
+    // console.log(obj);
+    // window.alert(obj);
+
+    // window.name = 5;
+
+    // console.log(typeof name);
+
+    // console.log(window.nam);//undefined
+
+    
+
+    
+
+</script>
+</body>
+</html>

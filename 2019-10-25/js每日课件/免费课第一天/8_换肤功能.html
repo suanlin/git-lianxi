@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<link rel="stylesheet" id="clink">
+</head>
+<body>
+    <button id="btn1">变蓝</button>
+    <button id="btn2">变黄</button>
+    <button id="btn3">变粉</button>
+<script>
+    const clink = document.getElementById('clink');
+    const btn1 = document.getElementById('btn1');
+    const btn2 = document.getElementById('btn2');
+    const btn3 = document.getElementById('btn3');
+
+    btn1.onclick = function(){
+        clink.href = './css/1.css';
+    }
+    btn2.onclick = function(){
+        clink.href = './css/2.css';
+    }
+    btn3.onclick = function(){
+        clink.href = './css/3.css';
+    }
+
+</script>
+</body>
+</html>

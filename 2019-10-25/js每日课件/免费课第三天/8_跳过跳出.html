@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        1,2,3,4,5
+        在for循环里面使用
+            跳过:
+                continue
+                    当某个条件成立的时候就跳过本次循环，然后接着下次循环
+                    跳过第四步，依然会执行
+            跳出:
+                break
+                    当某个条件成立的时候跳出循环体，后面的循环中断.
+                    break之后依然不会执行第四步，上一次会执行自增或者自减
+    */
+
+    // for(var i=1;i<=5;i++){
+    //     if(i === 3){
+    //         continue;
+    //     }
+    //     alert(i);
+    // }
+
+    for(var i=1;i<=5;i++){
+        if(i === 3){
+            break;
+        }
+        alert(i);
+    }
+    console.log(i);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:400px;
+}
+#box div{
+    width:400px;
+    height:200px;
+    border:1px solid #000;
+    display:none;
+}
+#box div.show{
+    display:block;
+}
+.active{
+    background: yellow;
+}
+
+
+</style>
+</head>
+<body>
+    <div id="box">
+        <button class="active">按钮一</button>
+        <button >按钮二</button>
+        <button>按钮三</button>
+        <div class="show">内容一</div>
+        <div>内容二</div>
+        <div>内容三</div>
+    </div>
+<script>
+
+    const btns = document.querySelectorAll('button');
+    const divs = document.querySelectorAll('#box div');
+    let lastIndex = 0;//btns[0]; //把第1个按钮存起来
+
+    let num = 0;
+
+
+    // for(let i=0,len=btns.length;i<len;i++){
+    //    btns[i].onclick = function(){
+    //        if(lastIndex === i)return;
+    //        //清除
+    //         btns[lastIndex].className = '';
+    //         divs[lastIndex].className = '';
+    //         //添加
+    //         this.className = 'active';
+    //         divs[i].className = 'show';
+
+    //         lastIndex = i;
+    //    }
+    // }
+
+
+
+    for(let i=0,len=btns.length;i<len;i++){
+        btns[i].onclick = function(){
+            change(i)
+            // console.log(this);
+        };
+    }
+
+    function change(i){
+        // alert(i)
+        // console.log(this);
+        if(lastIndex === i)return;
+        //清除
+        btns[lastIndex].className = '';
+        divs[lastIndex].className = '';
+        //添加
+        // this.className = 'active';
+        btns[i].className = 'active';
+        divs[i].className = 'show';
+
+        num = lastIndex = i;
+    }
+
+   
+    function t(){
+        num ++;
+        change(num%=3);
+    }
+    let timer = setInterval(t,1000);
+
+    box.onmouseover = function(){
+        clearInterval(timer);
+    }
+    box.onmouseout = function(){
+        timer = setInterval(t,1000);
+    }
+        
+
+    
+</script>
+</body>
+</html>

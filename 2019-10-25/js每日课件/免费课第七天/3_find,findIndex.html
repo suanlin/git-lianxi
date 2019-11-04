@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        find:找到回调函数中条件符合的一个数据并且返回，如果没有找到为undefined
+            find(function(item,index,all){
+                return 条件(true);
+            })
+
+
+        findIndex:找到回调函数中条件符合的数据索引，如果没有找到为-1
+            findIndex(function(item,index,all){
+                return 条件(true);
+            })
+
+    */
+    let ary = [true,false,1,6,'9',[null]];
+
+    // console.log(ary.find(item=>item==='10'));
+    // console.log(ary.findIndex(item=>item==='9'));
+
+    function findIndex(ary,data){
+        for(let i=0;i<ary.length;i++){
+            if(ary[i] === data){
+                return i;
+            }
+        }
+        return -1;
+    }
+    
+    // function find(ary,data){
+    //     for(let i=0;i<ary.length;i++){
+    //         if(ary[i] === data){
+    //             return data;
+    //         }
+    //     }
+    //     return null;
+    // }
+
+    // console.log(find(ary,'10'))
+    console.log(findIndex(ary,'9'))
+    
+</script>
+</body>
+</html>
