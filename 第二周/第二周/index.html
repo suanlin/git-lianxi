@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    fetch('./json/product.json') //前三行 获取json数据
+        .then(d => d.json())
+        .then(data => {
+                let newdata = data.concat(); // let 一个变量 重新复制一个数组
+                function render(newdata) { //把 获取到的json数据（nawdata） 传进去
+                    let lis = newdata.map(({
+                        title,
+                        img,
+                        price,
+                        time,
+                        hot
+                    }, i) => { //用map方法 循环数组的每一项
+                        return ( //是否符合条件 返回的是符合条件的新数组
+                            `<li>
+                    <img src="${img}" alt="">
+                    <p
+                        title="${title}"
+                    >商品名称:<span>${title.substr(0,6)}</span></p>
+                    <p>上架时间:<span>${time}</span></p>
+                    <p>商品热度:<span>${hot}</span></p>
+                    <p>商品价格::<span>${price}</span></p>
+                </li>`
+                        );
+                    }).join(''); // 把数组的每一项都变成字符串 去掉逗号
+                    ul.innerHTML = lis;
+                } // 把返回的结果 放到ul下的li里面
+                render(newdata); // 渲染一下当前页面
+
+                const as = document.querySelectorAll('a'); // 获取a链接元素
+                as.forEach((ele, i) => { // 用forEach 循环 数组的每一项 和当前项的索引
+                        ele.onoff = true; // 默认为true
+                        ele.onclick = function () { // 给每一项数组 添加点击事件 ele代表 每一个当前项
+                            if (this.onoff) { // this指向当前点击事件 判断默认值是否为true
+                                newdata.sort((a, b) => { // 把全部数组依次排序
+                                    if (this.dataset.name === 'time') { // 每一项ele是否包含'time' 包含就是true
+                                        return new Date(a.time) - new Date(b.time)
+                                    } //返回的是由小到大的时间排序
+                                    return a[this.dataset.name] - b[this.dataset.name];
+                                }); //返回的是热度与价格的排序
+                                // this.children[1].classList.remove('activeb'); //这个是显示上下箭头的移动
+                                // this.children[0].classList.add('activet');
+                            } else {
+                                newdata.sort((a, b) => {
+                                    if (this.dataset.name === 'time') {
+                                        return new Date(b.time) - new Date(a.time)
+                                    } //这个就是降序 跟上面的类似
+                                    return b[this.dataset.name] - a[this.dataset.name];
+                                });
+                                // this.children[0].classList.remove('activet'); //这个是显示上下箭头的移动
+                                // this.children[1].classList.add('activeb');}
+                                this.onoff = !this.onoff; // 出来的结果是true结果就是false 结果是false结果就是true
+                                render(newdata);
+                            }
+                        }); // 再次渲染页面 让效果实现
+
+                });
+</script>
