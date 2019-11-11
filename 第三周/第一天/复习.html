@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+/* 
+·   let num = 123;
+    num.a = 10;
+    console.log(num.a);
+ */
+ /* 
+    拷贝  就是把左边的数据赋值到左边
+    简单数据类型的就是赋值（是你的我是我的你的是我的我的是我的该我的不会影响你的）
+    引用数据类型赋址的操作（你的是我的我的是我的修改你的会影响我的）
+  */
+  function a(){
+
+  }
+  var  a= 5;
+  function a(){
+
+  }
+  /* 
+    let ary2 = [];
+    for(let i = 0; i  < ary.length;i++){
+        ary2[i] = ary[i];
+
+    }
+   */
+   
+   function deepClone(o) {
+        let obj = o.push?[]:{};
+        for(let attr in o){
+            if(o[attr] !== null && typeof o[attr] === 'object'){
+                obj[attr] = deepClone(o[attr])
+            }else{
+                obj[attr] = o[attr];
+            }
+        }
+        return obj;
+    }
+   
+    let ary2 = deepClone(ary);
+    ary2.push(4);
+</script>

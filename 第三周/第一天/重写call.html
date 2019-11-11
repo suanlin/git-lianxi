@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    /* 
+    call:
+    只要是个函数就有call方法改变this的指向
+    参数
+    多个参数
+    第一个是修改的this
+    第二个之后实参
+
+    注意
+    “null undefined 都是数据window
+
+    this 的指向 。-》 事件触发谁this就是谁 点前边的
+
+    document.click = function(){
+        console.log(this)
+    }
+    obj.fn() -> this是obj
+    this就是点前面的主
+
+    document.xx = function(){
+        console.log(this)
+    }
+    核心：
+        也就是说，只要让一个函数地址，等于某个对象下的方法
+        this自然就变成那个对象
+ */
+
+    Function.prototype.mycall = function (that, ...ary) {
+        let type = typeof that;
+        if (that === null || that === undefined) {
+            that = window;
+        } else {
+            switch (type) {
+                case 'string':
+                    that = new String(that);
+                    break;
+                case 'boolean':
+                    that = new Boolean(that);
+                    break;
+                case 'number':
+                    that = new Number(that);
+                    break;
+            }     
+        }
+    }
+
+
+    Function.prototype.mycall = function(context){
+        const cxt = context || window;
+        cxt.func = this;
+        
+        const args = Array.from(context).slice(1);
+        const res = args.length>1?cxt.func(...args):cxt.func();
+        delete cxt.func;
+        return res;
+    }
+    fn.call(fn2);
+    fn.call.call(fn2);
+    // 如果有多个call 第一个参数一定是会被调用的（this）
+
+    // 如果有多个call 最后一个call 的第一个参数为调用的那个参数，第二个参数是this指向，之后才是实参
+Function.prototype.call.call.call(fn2,1)
+  
+</script>
