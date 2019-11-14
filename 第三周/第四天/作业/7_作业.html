@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            name: '小明',
+            age: 18,
+            say: '好好学习，天天向上'
+        }
+        let q = '我的名字叫{name},年龄是{age}岁,我想说:{say}';
+        q = q.replace(/{[a-z]+}/g, function ($0, $1) {
+            $0 = obj[$0.match(/[a-z]+/)]
+            return $0;
+        })
+        console.log(q)
+
+        let str2 = 'hd82nxa89a3axdma2naejaaxaa8n2xdanja2cah2hnadhioamwajexnad8mdahiodn';
+        var arr = str2.split("").sort().join("").match(/(\d|[a-z])\1+/g).sort(function (a, b) {
+            return b.length - a.length;
+        })
+        console.log("出现最多的是: " + arr[0][0] + "共" + arr[0].length + "次");
+       
+    </script>
+</body>
+
+</html>
