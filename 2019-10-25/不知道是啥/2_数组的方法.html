@@ -33,11 +33,11 @@
 
     let ary = ['珠','feng','培训',17,16,18,'哈'];
 
-    // console.log(ary.forEach(function(item,i,all){
-    //     // console.log(item,i,all);
-    //     console.log(this);
-    //     // return 1;
-    // },'蒋子桐'));
+     console.log(ary.forEach(function(item,i,all){
+         console.log(item,i,all);
+         console.log(this);
+          return 1;
+     },'蒋子桐'));
 
     function forEach(ary,callback){
         for(let i=0;i<ary.length;i++){
