@@ -46,13 +46,10 @@ let iH = window.innerHeight; //可视区的高度
 window.onscroll = debounce(fn,200);
 
 function fn(){
-    //判断ul的高度是否比可视区要大，如果小于可视区高度，那么就终止加载代码执行
     if(box.scrollHeight < iH)return;
-    console.log(box.scrollHeight)
     let {min} = minEle(lis);  //最短的距离
     let scroll = window.pageYOffset; //滚动条的距离
     if(iH + scroll >= min+head.offsetHeight){
-        console.log('触底了');
         render();
     }
 }
