@@ -1,6 +1,5 @@
 const box = document.querySelector('.body');
 const lis = box.querySelectorAll('li');
-const head = document.querySelector('.head')
 function minEle(lis) {
     let ary = [...lis].map(ele => ele.scrollHeight);
     let min = Math.min(...ary);
@@ -11,17 +10,7 @@ function minEle(lis) {
         min
     }
 }
-function debounce(cb, time) {
-    let timer;
-    return function (...arg) {
-        if (timer) {
-            clearTimeout(timer);
-        }
-        timer = setTimeout(() => {
-            cb.call(this, ...arg);
-        }, time);
-    }
-}
+
 function render() {
     fetch('./data.json')
         .then(d => d.json())
@@ -41,15 +30,20 @@ function render() {
         });
 }
 render();
-let iH = window.innerHeight; //可视区的高度
+
+function debounce(cb, time) {
+    let timer;
+    return function (...arg) {
+        if (timer) {
+            clearTimeout(timer);
+        }
+        timer = setTimeout(() => {
+            cb.call(this, ...arg);
+        }, time);
+    }
+}
+
 window.onscroll = debounce(fn, 200);
 function fn() {
-    //判断ul的高度是否比可视区要大，如果小于可视区高度，那么就终止加载代码执行
-    if (box.scrollHeight < iH) return;
-    let { min } = minEle(lis);  //最短的距离
-    let scroll = window.pageYOffset; //滚动条的距离
-    if (iH + scroll >= min + head.offsetHeight) {
-        console.log('触底了');
-        render();
-    }
+    render();
 }
