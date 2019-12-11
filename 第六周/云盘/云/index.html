@@ -4,10 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <link rel="stylesheet" href="./css/1.css">
     <link rel="stylesheet" type="text/css" href="css/css.css" />
+
 </head>
 
 <body>
+
+
+
+
+
+
+
     <div id="box">
         <header id="head">
             <div id="top">
@@ -218,70 +227,86 @@
     <script src="js/breadmenu/breadmenu.js"></script>
     <script src="js/folders/folders.js"></script>
     <script src="js/navleft/navleft.js"></script>
-    <script>
-        /*
-            如果你把云做好，你就走进了顺利就业的那20%的人群中。
-            70%
-        */
-        /*
-            [
-                {
-                    name:'微云',
-                    children:[
-                        {
-                            name:'我的音乐',
-                            
-                        },
-                        {
-                            name:'我的文档'，
-                            children:[
-                                {
-                                    name:'我的资源',
-                                    children:[]
-                                },{},{}
-                            ]
-                        }
-                    ]
-                }
-            ]
+   
 
-            {
-                "0":{
-                    id:0,
-                    name:'微云',
-                    pid:-1
-                },
-                "1":{
-                    id:1,
-                    name:'我的音乐',
-                    pid:0
-                },
-                "2":{
-                    id:2,
-                    name:'我的文档',
-                    pid:0
-                },
-                "3":{
-                    id:3,
-                    name:'我的爱好',
-                    pid:2
-                },
-                "4":{
-                    id:4,
-                    name:'我的小心情',
-                    pid:3
-                }
-            }
-        */
-        
-        /*
-            MVC:
-                M -> Model    数据
-                V -> View     视图
-                C -> controller  控制器
-        */
 
-    </script>
+    <button id="btn">新建文件夹</button>
+<div id="boxq">
+
+    
+</div>
 </body>
 
 </html>
+
+
+
+<script>
+        let ary = [
+            {
+                title:'新建文件夹',
+                id:0
+            },
+            {
+                title:'新建文件夹(1)',
+                id:1
+            }
+        ];
+    
+    
+    
+    
+        function render(arr){
+            $('#boxq').html('');
+            $.each(arr,(i,item)=>{
+                //创建文件夹
+                let $folder = $(`
+                    <div class="folder">
+                        <img src="./img/folder-b.png">
+                        <input type="text"/>
+                        <p>${item.title}</p>
+                    </div>
+                `);
+                $folder.find('input').hide();
+                $('#boxq').append($folder);
+            });
+        }
+        render(ary);
+    
+        //2.点击创建文件夹
+        //先在box中创建一个folder的元素，然后当folder中的input失焦之后再添加数据到ary中
+        //然后通过最新的ary渲染页面即可
+        $('#btn').click(function(){
+            let $folder = $(`
+                <div class="folder">
+                    <img src="./img/folder-b.png">
+                    <input type="text" placeholder="请设置文件名"  value="新建文件夹"/>
+                </div>
+            `);
+            $('#boxq').append($folder);
+            //先插入在聚焦
+            let $txt = $folder.find('input');
+            $txt.select(); //选中聚焦
+            $txt.blur(function(){
+         
+                let val = $txt.val();
+                //看看是否重复命名
+                let bool = ary.map(item=>item.title).includes(val);
+                let nval = '';
+                let num = 1; 
+                nval = val; //把input中value给最新的value（最新的value就是最后的结果）
+                while(bool){
+                    //如果重名了那么从1开始看有没有重名
+                    let s = val.replace(/\(\d\)$/,'') + '('+ num++ +')';
+                    bool = ary.map(item=>item.title).includes(s);
+                    nval = s;
+                }
+                ary.push({
+                    id:+new Date,
+                    title:nval
+                });
+                render(ary);
+            });//失焦事件
+        });
+    </script>
+
