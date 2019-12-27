@@ -1,0 +1,50 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="/public/css/weibo.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="nArea">
+    <div class="takeComment">
+        <textarea name="textarea" class="takeTextField" id="text"></textarea>
+        <div class="takeSbmComment">
+            <input type="button" id="submit" class="inputs" value=""/>
+            <span>(可按 Enter 回复)</span>
+        </div>
+    </div>
+    <div class="commentOn">
+        <div class="messList" id="div1" style="height:502px">
+        </div>
+        <div class="page" id="page">
+        </div>
+    </div>
+</div>
+<script src="../public/js/axios.min.js"></script>
+</body>
+</html>
+<script>
+    /* 
+        只要是ajax请求，有限吧数据打印出来看看
+    */
+   let  pageNum = 1;
+   // 刷新就请求第一页的数据
+   function pageFn(num = 1){
+       fetch('/api/weibo?act=get&page='+num).then(d=>d.json()).then(d=>{
+           render(d);
+       });
+   }
+   pageFn(pageNum);
+   // 点击按钮发送消息
+   subimit.onclick = function(){
+       let {value} = text;
+       // 请求成功之后才能插入页面
+       fetch('/api/weibo?act=add&conten='+value).then(d=>d.json()).then(d=>{
+           if(d.code === 0){
+               pageNUm = 1;
+               page
+           }
+       })
+   }
+</script>

@@ -24,7 +24,6 @@
 		}
 	});
 	
-
 	btn.onclick = function(){
 		fetch('/logout').then(d=>d.json()).then(d=>{
 			if(d.code === 0){

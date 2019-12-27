@@ -15,12 +15,8 @@
         axios.all([a,b]).then(axios.spread(function(a,b){
             //a和b一起完成
         }))
-
         请求拦截器（interceptors.requst）是指可以拦截每次或指定HTTP请求，并可修改配置项。
-
         响应拦截器（interceptors.response）可以在每次HTTP请求后拦截住每次或指定HTTP请求，并可修改返回结果项。
-
-
     */
 
     //a执行完才会执行b，一共用7秒
