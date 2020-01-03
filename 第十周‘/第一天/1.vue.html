@@ -19,21 +19,59 @@
         </style>
 </head>
 <body>
-    <div id="app">{{ a }} </div><br>
-    <span class="aaa">{{qw}}</span>
+    <div id="app">
+       <p>{{msg}}</p>
+    </div>
+    <button id="btn"></button>
 </body>
 </html>
 <script src="./vue.js"></script>
 <script>
-    var data = {a :'这个你懂吗'};
-    var vm = new Vue({
-        el:'#app',
-        data:data
-    });
-    vm.$watch('a',function(newVal,oldVal){
-        console.log(newVal,oldVal);
-    });
-    vm.$data.a = 'test....';
 
+
+
+const btn = {
+    template :` <button @click = 'click'>按钮{{num}}</button>`,
+    data(){
+        return {
+            num :0
+        }
+    },
+    methods:{
+        click(){
+            this.num++
+        }
+    }
+};
+
+new Vue({
+    el:'#app',
+    data:{
+        msg:'haha'
+    },
+    methods:{
+
+    },
+    // 通过components去注册子组件
+    components:{
+
+    }
+})
+
+
+
+
+
+const ppa = {
+    template:` 
+    <div>
+    <div>1</div>
+    <span>Vue真的太难了</span>
+    <btn></btn>
+    </div>`,
+    components:{
+        btn
+    }
+}
 
 </script>
