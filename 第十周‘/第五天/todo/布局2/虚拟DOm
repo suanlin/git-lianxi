@@ -1,0 +1,46 @@
+        虚拟DOM
+            old {
+                name:'ul',
+                className:'list',
+                children:[
+                    {
+                        key:0
+                        name:'li',
+                        className:'li1',
+                        text:'哈哈'
+                    }
+                ]
+            }
+
+            new {
+                name:'ul',
+                className:'list',
+                children:[
+                    {
+                        key:0,
+                        name:'li',
+                        className:'li1',
+                        text:'哈哈'
+                    },
+                    {
+                        key:1,
+                        name:'li',
+                        className:'li1',
+                        text:'呵呵'
+                    }
+                ]
+            }
+
+            <ul class="list">
+                <li class="li1">哈哈</li>
+            </ul>
+
+        如果只是*展示*一次
+        <ul id="ul1">
+            <li v-for="(val,key) in ary" :key="key"></li>
+        </ul>
+
+        <ul id="ul2">
+            <li v-for="(val,key) in ary2" :key="`ul2${key}`"></li>
+        </ul>
+    console.dir(box)

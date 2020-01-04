@@ -17,34 +17,39 @@
         <div>哈哈，我是模板{{num}}</div>
     </template>
 <script src="./vue.js"></script>
-</body>
-</html>
 <script>
-    cinst ppa = {
+    const ppa = {
         template:'<div>第一个子组件</div>'
     }
+
     const pap = {
-        template :`<div><h5>第二个子组件</h5>
-        <ppa></ppa>
-        </div>`,
+        template:`<div>
+                <h5>第二个子组件</h5>
+                <ppa></ppa>
+            </div>`,
         components:{
-            // 局部注册的只能在局部组件中使用
+            //局部注册的只能在局部组件中使用
             ppa
         }
     }
+
     const tempb = {
         template:'#tempb',
         data(){
             return {
-                num : 10
+                num:10
             }
         }
     }
 
-    Vue.components('tempb',tempb);
-    Vue.component('pap',pap);// 全局注册在哪里都能用都可以
+
+    Vue.component('tempb',tempb);
+    Vue.component('pap',pap);//全局注册在哪里用都可以
     Vue.component('ppa',ppa);
+
     new Vue({
         el:'#app'
     })
 </script>
+</body>
+</html>

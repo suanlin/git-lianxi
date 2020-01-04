@@ -28,19 +28,20 @@
         </div>
     </template>
 <script src="./vue.js"></script>
-</body>
-</html>
 <script>
-    ///定义组件
+    //定义组件
     const temp1 = {
         template:'#temp1',
         props:['nn'],
         methods:{
             add(){
-                this.$emit('child';)
+                this.$emit('child');
+                // console.log( this.$emit)
             }
         }
-    }
+    } 
+
+    
     new Vue({
         el:'#app',
         data:{
@@ -48,11 +49,14 @@
         },
         methods:{
             changeFn(){
-                this.num++;
+                this.num ++;
             }
         },
         components:{
+            //注册组件
             temp1
         }
     })
 </script>
+</body>
+</html>
