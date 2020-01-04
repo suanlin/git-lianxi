@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div v-color="'green'">
+            {{val}}
+        </div>
+        <input type="text" v-focus   value="1111"/>
+        <hr>
+        <aaa></aaa>
+    </div>
+
+    <template id="aaa">
+        <div v-size="50">32132321</div>
+    </template>
+<script src="./vue.js"></script>
+</body>
+</html>
+<script>
+    Vue.directive('color',function(el,val){
+        el.style.color = val.value?val.value:'red';
+    });
+
+    Vue.directive('focus',{
+        inserted(el){
+            el.select();
+        }
+    });
+    new Vue({
+        el:'#app',
+        data:{
+            val:'vue是最后一关吗不可能的'
+        },
+        components:{
+            aaa:{
+                template:'#aaa',
+                directive:{
+                    size(el,val){
+                        el,style.fontSize = val.value?val.value+'px':"12px";
+                    }
+                }
+            }
+        }
+    })
+</script>
